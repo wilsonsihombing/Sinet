@@ -38,20 +38,29 @@ body {
   border-radius: 0px;
 }
 
-.btn-login {
-  color: #1141b1;
-  background-color: #ffffff;
+.dropdown {
+  .btn-login {
+    color: #1141b1;
+    background: none;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    display: flex;
+    align-items: center;
 
-  &:hover {
-    color: #ffffff;
-    background-color: #7696e3;
+    &:hover {
+      color: #1141b1;
+      background: none;
+      border: none;
+      outline: none;
+    }
   }
-}
 
-.img-user {
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
+  .img-user {
+    width: 20px;
+    height: 20px;
+    margin-left: 15px;
+  }
 }
 
 //header
