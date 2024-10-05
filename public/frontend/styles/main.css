@@ -28,19 +28,25 @@ body {
   border-radius: 0px;
 }
 
-.btn-login {
+.dropdown .btn-login {
   color: #1141b1;
-  background-color: #ffffff;
+  background: none;
+  border: none;
+  outline: none;
+  box-shadow: none;
+  display: flex;
+  align-items: center;
 }
-.btn-login:hover {
-  color: #ffffff;
-  background-color: #7696e3;
+.dropdown .btn-login:hover {
+  color: #1141b1;
+  background: none;
+  border: none;
+  outline: none;
 }
-
-.img-user {
+.dropdown .img-user {
   width: 20px;
   height: 20px;
-  border-radius: 50%;
+  margin-left: 15px;
 }
 
 header {
