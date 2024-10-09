@@ -21,7 +21,7 @@
           <div class="collapse navbar-collapse" id="navb">
             <ul class="navbar-nav ml-auto mr-3">
               <li class="nav-item mx-md-2">
-                <a href="#" class="nav-link active">HOME</a>
+                <a href="{{ url('/') }}" class="nav-link active">HOME</a>
               </li>
 
               <li class="nav-item dropdown">
@@ -34,14 +34,15 @@
                   PROGRAM
                 </a>
                 <div class="dropdown-menu">
-                  <a href="#" class="dropdown-item">Kesenian</a>
-                  <a href="#" class="dropdown-item">Kerohanian</a>
-                  <a href="#" class="dropdown-item">Humas</a>
+                  <a href="{{ route('program.kesenian') }}" class="dropdown-item">Kesenian</a>
+                  <a href="{{ route('program.kerohanian') }}" class="dropdown-item">Kerohanian</a>
+                  <a href="{{ route('program.humas') }}" class="dropdown-item">Humas</a>
+                  <a href="{{ route('program.pendidikan') }}" class="dropdown-item">Pendidikan</a>
                 </div>
               </li>
 
               <li class="nav-item mx-md-2">
-                <a href="#" class="nav-link">EVENT</a>
+                <a href="{{ url('/moreEvents') }}" class="nav-link">EVENT</a>
               </li>
 
               <li class="nav-item dropdown">
@@ -54,7 +55,7 @@
                   SERVICES
                 </a>
                 <div class="dropdown-menu">
-                  <a href="#" class="dropdown-item">QnA</a>
+                  <a href="{{ url('/moreEvents') }}" class="dropdown-item">QnA</a>
                   <a href="#" class="dropdown-item">Info Karier</a>
                 </div>
               </li>

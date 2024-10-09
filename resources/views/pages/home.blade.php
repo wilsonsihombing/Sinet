@@ -14,7 +14,7 @@
         <p>Explore, Learn,</p>
         <p>Grow with <span class="subtitle">HIMSI</span></p>
 
-        <a href="#" class="btn btn-explore px-3 mt-3">EXPLORE OUR JOURNEY</a>
+        <a href="#visi" class="btn btn-explore px-3 mt-3">EXPLORE OUR JOURNEY</a>
     </header>
 
     <!-- main -->
@@ -195,7 +195,7 @@
         </section>
 
         <div class="button-events">
-            <a href="" class="btn btn-submit">SEE MORE EVENTS</a>
+            <a href="{{ url('/moreEvents') }}" class="btn btn-submit">SEE MORE EVENTS</a>
         </div>
     </main>
 @endsection

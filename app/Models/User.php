@@ -18,6 +18,7 @@ class User extends Authenticatable
      */
     protected $fillable = [
         'name',
+        'username',
         'email',
         'password',
     ];
@@ -41,7 +42,36 @@ class User extends Authenticatable
     {
         return [
             'email_verified_at' => 'datetime',
-            'password' => 'hashed',
         ];
     }
+
+    /**
+     * Periksa apakah pengguna adalah admin.
+     */
+    public function isAdmin()
+    {
+        return $this->roles === 'ADMIN';
+    } 
+
+
+    public function careerInfos()
+    {
+        return $this->hasMany(CareerInfo::class, 'posted_by');
+    }
+    
+    public function qnasPosted()
+    {
+        return $this->hasMany(QnA::class, 'posted_by');
+    }
+
+    public function qnasAnswered()
+    {
+        return $this->hasMany(QnA::class, 'answered_by');
+    }
+
+    public function profile()
+    {
+        return $this->hasOne(UserProfile::class, 'user_id');
+    }
+
 }

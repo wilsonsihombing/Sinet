@@ -7,7 +7,7 @@
             <img src="{{ url('frontend/images/lambang bagus.png') }}" alt="logo" style="width: 40px; height: auto;"
                 class="py-1">
         </div>
-        <div class="sidebar-brand-text mx-1">SINET <sup>HIMSI</sup></div>
+        <div class="sidebar-brand-text mx-1">SINET HIMSI</div>
     </a>
 
     <!-- Divider -->
