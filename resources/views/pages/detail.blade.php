@@ -8,7 +8,7 @@
         <section class="section-details-content">
             <div class="container">
                 <!-- breadcrumb -->
-                <div class="row">
+                {{-- <div class="row">
                     <div class="col p-0">
                         <nav>
                             <ol class="breadcrumb">
@@ -18,8 +18,25 @@
                             </ol>
                         </nav>
                     </div>
+                </div> --}}
+                <div class="row">
+                    <div class="col p-0">
+                        <nav>
+                            <ol class="breadcrumb">
+                                <li class="breadcrumb-item">
+                                    <a href="/">Home</a>
+                                </li>
+                                <li class="breadcrumb-item">
+                                    <a href="/moreEvents">More Events</a>
+                                </li>
+                                <li class="breadcrumb-item active">
+                                    Details
+                                </li>
+                            </ol>
+                        </nav>
+                    </div>
                 </div>
-                
+
                 <div class="row">
                     <div class="col-lg-12 pl-lg-0">
                         <div class="card card-details">

@@ -633,7 +633,7 @@ main .button-events .btn-submit:hover {
   border-radius: 1rem;
 }
 .card .bg-primary {
-  background-color: #0174BE !important;
+  background-color: #0174be !important;
 }
 .card .card-body {
   padding: 2rem;
@@ -652,4 +652,75 @@ main .button-events .btn-submit:hover {
 }
 .card .card-body .text-white {
   text-align: center;
+}
+
+.profile-container {
+  max-width: 800px;
+  margin: 100px auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+}
+.profile-container .profile-image {
+  width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+}
+.profile-container .data-diri {
+  margin-left: 5px;
+}
+.profile-container .table {
+  margin-bottom: 0;
+}
+
+.proker {
+  margin-top: 100px;
+}
+.proker .profile-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Mengatur gambar dan nama agar lurus vertikal */
+  margin: 0 10px; /* Jarak antar item */
+}
+.proker .profile-circle {
+  width: 100px; /* Atur ukuran lingkaran sesuai kebutuhan */
+  height: 100px;
+  border-radius: 50%; /* Membuat elemen menjadi lingkaran */
+  overflow: hidden; /* Supaya gambar tidak keluar dari lingkaran */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 10px; /* Memberikan jarak antar lingkaran */
+  background-color: #f0f0f0; /* Background warna default untuk lingkaran tanpa gambar */
+}
+.proker .profile-circle img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Gambar akan disesuaikan di dalam lingkaran tanpa terdistorsi */
+}
+.proker .profile-name {
+  margin: 10px;
+  text-align: center;
+}
+
+.program-title {
+  background-color: #007bff;
+  color: white;
+  padding: 10px;
+  font-size: 18px;
+}
+
+.program-content {
+  border: 2px solid #007bff;
+  padding: 20px;
+}
+.program-content .program-item {
+  margin-bottom: 20px;
+}
+.program-content .program-item .program-item-title {
+  font-weight: bold;
+  margin-bottom: 10px;
 }/*# sourceMappingURL=main.css.map */
