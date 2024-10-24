@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-    <!-- header -->
+    <!-- header -->  
     <header class="text-md-left text-left">
         <h1 class="">
             HIMPUNAN MAHASISWA <span class="subtitle">SISTEM INFORMASI</span> 
