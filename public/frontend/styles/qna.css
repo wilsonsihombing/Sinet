@@ -1,0 +1,309 @@
+body {
+    background-color: #ffffff;
+    font-family: "Roboto", sans-serif;
+    color: #071c4d;
+}
+
+.navbar-brand img {
+    max-height: 55px;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: #071c4d;
+}
+.navbar-light .navbar-nav .nav-link.active {
+    font-weight: bold;
+    color: #071c4d !important;
+}
+.navbar-light .navbar-nav .nav-link .dropdown-item {
+    color: #071c4d;
+    font-family: "roboto", sans-serif;
+}
+
+.btn-navbar-right {
+    margin-top: -20px !important;
+    margin-right: -8px !important;
+    margin-bottom: -18px !important;
+    height: 70px;
+    border-radius: 0px;
+}
+
+.dropdown .btn-login {
+    color: #1141b1;
+    background: none;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    display: flex;
+    align-items: center;
+}
+.dropdown .btn-login:hover {
+    color: #1141b1;
+    background: none;
+    border: none;
+    outline: none;
+}
+.dropdown .img-user {
+    width: 20px;
+    height: 20px;
+    margin-left: 15px;
+}
+
+header {
+    padding: 180px 0 165px;
+    margin-top: 0px;
+    background-image: url("../images/dashboardupdate.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+header h1 {
+    font-size: 50px;
+    color: #ffffff;
+    font-family: "Bebas Neue", cursive;
+    font-weight: bold;
+    margin-left: 70px;
+    margin-right: 70px;
+}
+header h1 .subtitle {
+    color: #ffc436;
+    display: inline;
+}
+header p {
+    font-size: 50px;
+    color: #ffffff;
+    font-family: "Poly", cursive;
+    font-weight: bold;
+    margin-left: 70px;
+    margin-top: -20px;
+    margin-right: 70px;
+}
+header p .subtitle {
+    color: #ffc436;
+    display: inline;
+    margin-right: auto;
+}
+header .btn-explore {
+    background-color: #0174be;
+    color: #ffffff;
+    margin-left: 70px;
+    font-family: "bebas neue", cursive;
+    font-size: 30px;
+}
+header .btn-explore:hover {
+    background-color: #266d99;
+    color: #ffffff;
+}
+
+.head-qna h1 {
+    font-size: 150px;
+}
+.head-qna span {
+    margin-left: 400px;
+}
+.head-qna .question-box {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 50px;
+    padding: 20px;
+    width: 100%;
+    max-width: 800px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: 20px;
+}
+.head-qna .question-box input[type="text"] {
+    border: none;
+    outline: none;
+    padding: 10px;
+    font-size: 16px; /* Adjusted to a more practical size */
+    border-radius: 50px;
+    width: 100%;
+    max-width: 800px;
+}
+
+.container {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px;
+}
+
+.content {
+    flex: 2; /* Left content takes more space */
+}
+.content h1 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+.content p {
+    font-size: 1rem;
+    color: #333;
+}
+
+.question-list {
+    flex: 1; /* Question list takes less space */
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    max-width: 300px;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+}
+.question-list h3 {
+    text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+.question-list .question-box {
+    max-width: 100%;
+    overflow-y: auto;
+    height: 500px;
+}
+.question-list .question-box .question-item {
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #e1e1e1;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    align-items: center;
+}
+.question-list .question-box .question-item .question-header p {
+    font-weight: bold;
+    margin: 0;
+}
+.question-list .question-box .question-item .question-body {
+    margin-top: 5px;
+}
+.question-list .question-box .question-item .question-body p {
+    margin: 0;
+    color: #333;
+}
+.question-list .question-box .question-item .question-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+.question-list .question-box .question-item .question-footer button {
+    background-color: #3b5998;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+.question-list .question-box .question-item .question-footer button:hover {
+    background-color: #365492;
+}
+.question-list .question-box .question-item .question-footer a {
+    text-decoration: none;
+    color: #3b5998;
+}
+.question-list .question-box .question-item .question-footer a:hover {
+    text-decoration: underline;
+}
+
+.footer {
+    background-color: #0c356a;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+.footer .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.footer .footer-content {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+    padding: 20px 0;
+}
+.footer .footer-content .footer-left,
+.footer .footer-content .footer-right {
+    flex: 1;
+    padding: 5px;
+}
+.footer .footer-heading {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+    font-family: "bebas neue", cursive;
+}
+.footer .footer-nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 5px;
+    font-family: "bebas neue", cursive;
+}
+.footer .footer-nav a:hover {
+    text-decoration: underline;
+}
+.footer .follow-us {
+    margin-top: 5px;
+    font-size: 1.5rem;
+    font-family: "bebas neue", cursive;
+    margin-bottom: 5px;
+}
+.footer .footer-social a {
+    color: white;
+    text-decoration: none;
+    margin: 0 5px;
+    font-family: "bebas neue", cursive;
+    font-size: 1rem;
+}
+.footer .footer-social a i {
+    margin-right: 5px;
+}
+.footer .footer-right p {
+    margin: 5px 0;
+}
+.footer .footer-contact-heading {
+    font-size: 1.5rem;
+    font-family: "bebas neue", cursive;
+}
+.footer .footer-bottom {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+}
+.footer .footer-bottom .footer-logo-wrapper {
+    padding: 10px;
+    border-radius: 5px;
+    background-size: cover;
+}
+.footer .footer-bottom .footer-logo {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 10px;
+    position: relative;
+    background-image: #ffffff;
+}
+.footer .footer-bottom .footer-title {
+    font-size: 1.5rem;
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+.footer .footer-bottom .footer-title .title {
+    margin: 0;
+    font-family: "bebas neue", cursive;
+    font-size: 1.2rem;
+}
+.footer .footer-bottom .footer-title .subtitle {
+    font-family: "roboto", sans-serif;
+    font-size: 0.8rem;
+}
+.footer .footer-copyright .footer-line {
+    border: 1px solid #ffffff;
+    width: 100%;
+    margin-top: 10px;
+} /*# sourceMappingURL=main.css.map */

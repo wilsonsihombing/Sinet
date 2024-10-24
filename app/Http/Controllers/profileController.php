@@ -9,4 +9,9 @@ class profileController extends Controller
     public function index(Request $request){
         return view('pages.profile');
     }
+
+    public function edit(){
+        return view('pages.editprofile');
+    }
+
 }
