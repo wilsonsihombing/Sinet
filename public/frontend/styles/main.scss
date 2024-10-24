@@ -365,6 +365,24 @@ main {
     }
 }
 
+//upcoming events
+.upcoming-event{
+    h2{
+        font-size: 40px;
+        color: #0c356a;
+        font-family: "bebas neue", cursive;
+        font-weight: bold;
+        margin-bottom: 20px;
+
+        span{
+            color: #ffc436;
+        }
+    }
+
+    
+}
+
+
 // footer
 .footer {
     background-color: #0c356a;

@@ -157,6 +157,41 @@
                 </div>
             </section>
         </div>
+        <section>
+            <div class="container mt-2 upcoming-event  mb-5">
+                <div class="upcoming-title text-center mb-4">
+                    <h2 class="display-5 mt-5">
+                        UPCOMING <span class="costume-color">EVENT</span>
+                    </h2>
+                </div>
+
+                <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+                        <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+                        {{-- <li data-target="#carouselExampleIndicators" data-slide-to="2"></li> --}}
+                    </ol>
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img src="{{ url('frontend/images/upcoming1.png') }}" class="d-block w-100" alt="...">
+                        </div>
+                        <div class="carousel-item">
+                            <img src="{{ url('frontend/images/upcoming2.png') }}" class="d-block w-100" alt="...">
+                        </div>
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-target="#carouselExampleIndicators"
+                        data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-target="#carouselExampleIndicators"
+                        data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </button>
+                </div>
+            </div>
+        </section>
 
         <section class="section-events" id="events">
             <div class="container">
@@ -197,5 +232,7 @@
         <div class="button-events">
             <a href="{{ url('/moreEvents') }}" class="btn btn-submit">SEE MORE EVENTS</a>
         </div>
+
+
     </main>
 @endsection

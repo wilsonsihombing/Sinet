@@ -39,6 +39,9 @@
                             </tr>
                         </tbody>
                     </table>
+
+                    <!-- Button Edit Profile -->
+                    <a href="{{ route('edit.profiles') }}" class="btn btn-primary mt-3">Edit Profile</a>
                 </div>
             </div>
         </div>

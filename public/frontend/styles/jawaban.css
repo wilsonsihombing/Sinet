@@ -1,0 +1,455 @@
+body {
+    background-color: #ffffff;
+    font-family: "Roboto", sans-serif;
+    color: #071c4d;
+  }
+  
+  .navbar-brand img {
+    max-height: 55px;
+  }
+  
+  .navbar-light .navbar-nav .nav-link {
+    color: #071c4d;
+  }
+  .navbar-light .navbar-nav .nav-link.active {
+    font-weight: bold;
+    color: #071c4d !important;
+  }
+  .navbar-light .navbar-nav .nav-link .dropdown-item {
+    color: #071c4d;
+    font-family: "roboto", sans-serif;
+  }
+  
+  .btn-navbar-right {
+    margin-top: -20px !important;
+    margin-right: -8px !important;
+    margin-bottom: -18px !important;
+    height: 70px;
+    border-radius: 0px;
+  }
+  
+  .dropdown .btn-login {
+    color: #1141b1;
+    background: none;
+    border: none;
+    outline: none;
+    box-shadow: none;
+    display: flex;
+    align-items: center;
+  }
+  .dropdown .btn-login:hover {
+    color: #1141b1;
+    background: none;
+    border: none;
+    outline: none;
+  }
+  .dropdown .img-user {
+    width: 20px;
+    height: 20px;
+    margin-left: 15px;
+  }
+  
+  header {
+    padding: 180px 0 165px;
+    margin-top: 0px;
+    background-image: url("../images/dashboardupdate.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+  header h1 {
+    font-size: 50px;
+    color: #ffffff;
+    font-family: "Bebas Neue", cursive;
+    font-weight: bold;
+    margin-left: 70px;
+    margin-right: 70px;
+  }
+  header h1 .subtitle {
+    color: #ffc436;
+    display: inline;
+  }
+  header p {
+    font-size: 50px;
+    color: #ffffff;
+    font-family: "Poly", cursive;
+    font-weight: bold;
+    margin-left: 70px;
+    margin-top: -20px;
+    margin-right: 70px;
+  }
+  header p .subtitle {
+    color: #ffc436;
+    display: inline;
+    margin-right: auto;
+  }
+  header .btn-explore {
+    background-color: #0174be;
+    color: #ffffff;
+    margin-left: 70px;
+    font-family: "bebas neue", cursive;
+    font-size: 30px;
+  }
+  header .btn-explore:hover {
+    background-color: #266d99;
+    color: #ffffff;
+  }
+  
+  main {
+    padding: 10px 0;
+  }
+  main .section-visi {
+    margin-bottom: 10px;
+  }
+  main .section-visi h2 {
+    font-size: 40px;
+    color: #0c356a;
+    font-family: "bebas neue", cursive;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  main .section-visi .costum-mid-hr {
+    border: 5px solid #ffc436;
+    width: 50px;
+    display: block;
+    margin-bottom: auto;
+  }
+  main .section-visi .costume-hr {
+    border: 1px solid #ffc436;
+    width: 100vw;
+    margin: 0;
+    position: relative;
+    left: calc(-50vw + 49%);
+  }
+  main .section-visi .visi-text {
+    font-size: 25px;
+    color: #000;
+    font-family: "roboto", sans-serif;
+    margin-top: 20px;
+  }
+  main .section-visi .misi-list {
+    font-size: 25px;
+    color: #141617;
+    font-family: "roboto", sans-serif;
+    margin-top: 20px;
+  }
+  main .hr-relasi {
+    border: 1px solid #ffc436;
+    width: 60%;
+  }
+  main .section-relasi {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+  }
+  main .section-relasi .row {
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+  }
+  main .section-relasi .row .col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  main .section-relasi .row .col .circle {
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    border: 3px solid #ffc436;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin: 0 120px;
+  }
+  main .section-relasi .row .col .circle .number {
+    font-size: 24px;
+    font-weight: bold;
+    color: #0c356a;
+    font-family: "bebas neue" cursive;
+  }
+  main .section-relasi .row .col .label {
+    margin-top: 10px;
+    font-size: 25px;
+    color: #0c356a;
+    font-family: "roboto" sans-serif;
+    font-weight: bold;
+  }
+  main .section-struktur {
+    margin-top: 10px;
+  }
+  main .section-struktur .struktur-organisasi {
+    margin-top: 10px;
+  }
+  main .section-struktur .struktur-organisasi h2 {
+    font-size: 40px;
+    color: #0c356a;
+    font-family: "bebas neue", cursive;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  main .section-struktur .struktur-organisasi h2 span {
+    color: #ffc436;
+  }
+  main .section-profile {
+    padding: 20px;
+  }
+  main .section-profile .profile {
+    text-align: left;
+    padding: 0 15px;
+  }
+  main .section-profile .profile .hr-profile {
+    border: 1px solid #ffc436;
+    width: 30%;
+    margin-top: -85px;
+  }
+  @media (max-width: 768px) {
+    main .section-profile .profile .hr-profile {
+      margin-top: 10px;
+      margin-left: 5px;
+    }
+  }
+  main .section-profile .profile .costume-color {
+    color: #ffc436;
+  }
+  main .section-profile .profile .profile-display {
+    margin-left: 360px;
+    font-family: "playfair display", serif;
+    font-size: 20px;
+    color: #0c356a;
+  }
+  @media (max-width: 768px) {
+    main .section-profile .profile .profile-display {
+      margin-left: 5px;
+      font-size: 18px;
+    }
+  }
+  main .section-profile .profile-img {
+    margin-top: 60px;
+    display: flex;
+    justify-content: center;
+  }
+  main .section-profile .profile-img .costume-img {
+    width: 350px;
+    height: 338px;
+  }
+  main .section-profile .profile-img .img-fluid {
+    border-radius: 5%;
+  }
+  main .section-profile .profile-img .label {
+    font-weight: bold;
+    font-family: "bebas neue" cursive;
+    font-size: 15px;
+    color: #000;
+    margin-top: 10px;
+  }
+  main .section-profile .profile-img .information {
+    font-family: "roboto" sans-serif;
+    font-size: 15px;
+    color: #000;
+    margin-top: -10px;
+  }
+  main .section-events {
+    min-height: 540px;
+    background-color: #b8def7;
+    margin-top: -10px;
+    margin-bottom: -230px;
+  }
+  main .section-events-heading {
+    margin-top: 60px;
+  }
+  main .section-events-heading h2 {
+    font-size: 40px;
+    color: #0c356a;
+    font-family: "bebas neue", cursive;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  main .section-events-heading h2 span {
+    color: #ffffff;
+  }
+  main .section-events-heading p {
+    font-size: 20px;
+    font-family: "roboto", sans-serif;
+  }
+  main .section-events-content {
+    padding: 20px 20px;
+    margin-top: -300px;
+  }
+  main .section-events-content .section-event-program .costume-event {
+    border-radius: 10px;
+    width: 100%;
+    object-fit: cover;
+    max-height: 500px;
+    padding: 1px;
+    margin-top: 20px;
+  }
+  main .button-events {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  main .button-events .btn-submit {
+    background-color: #0174be;
+    color: #ffffff;
+    font-family: "bebas neue", cursive;
+    font-size: 30px;
+    padding: 10px 10px;
+    width: 70%;
+    border-radius: 5px;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+  }
+  main .button-events .btn-submit:hover {
+    background-color: #266d99;
+    color: #ffffff;
+  }
+  
+  .footer {
+    background-color: #0c356a;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+  }
+  .footer .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .footer .footer-content {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    max-width: 1200px;
+    padding: 20px 0;
+  }
+  .footer .footer-content .footer-left,
+  .footer .footer-content .footer-right {
+    flex: 1;
+    padding: 5px;
+  }
+  .footer .footer-heading {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+    font-family: "bebas neue", cursive;
+  }
+  .footer .footer-nav a {
+    color: white;
+    text-decoration: none;
+    margin: 0 5px;
+    font-family: "bebas neue", cursive;
+  }
+  .footer .footer-nav a:hover {
+    text-decoration: underline;
+  }
+  .footer .follow-us {
+    margin-top: 5px;
+    font-size: 1.5rem;
+    font-family: "bebas neue", cursive;
+    margin-bottom: 5px;
+  }
+  .footer .footer-social a {
+    color: white;
+    text-decoration: none;
+    margin: 0 5px;
+    font-family: "bebas neue", cursive;
+    font-size: 1rem;
+  }
+  .footer .footer-social a i {
+    margin-right: 5px;
+  }
+  .footer .footer-right p {
+    margin: 5px 0;
+  }
+  .footer .footer-contact-heading {
+    font-size: 1.5rem;
+    font-family: "bebas neue", cursive;
+  }
+  .footer .footer-bottom {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+  }
+  .footer .footer-bottom .footer-logo-wrapper {
+    padding: 10px;
+    border-radius: 5px;
+    background-size: cover;
+  }
+  .footer .footer-bottom .footer-logo {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 10px;
+    position: relative;
+    background-image: #ffffff;
+  }
+  .footer .footer-bottom .footer-title {
+    font-size: 1.5rem;
+    margin-left: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .footer .footer-bottom .footer-title .title {
+    margin: 0;
+    font-family: "bebas neue", cursive;
+    font-size: 1.2rem;
+  }
+  .footer .footer-bottom .footer-title .subtitle {
+    font-family: "roboto", sans-serif;
+    font-size: 0.8rem;
+  }
+  .footer .footer-copyright .footer-line {
+    border: 1px solid #ffffff;
+    width: 100%;
+    margin-top: 10px;
+  }
+  
+  .chat-box {
+    background-color: rgba(255, 255, 255, 0.9);
+    border-radius: 20px;
+    padding: 20px;
+    margin: 20px;
+    max-width: 600px;
+    margin: auto;
+  }
+  .chat-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  .chat-header i {
+    font-size: 24px;
+    margin-right: 10px;
+  }
+  .chat-header span {
+    font-weight: bold;
+  }
+  .chat-question {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  .chat-input {
+    background-color: rgba(255, 255, 255, 0.8);
+    border: 2px solid #007bff;
+    border-radius: 20px;
+    padding: 10px 20px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+  }
+  .chat-input input {
+    border: none;
+    outline: none;
+    background: transparent;
+    flex-grow: 1;
+  }
+  .chat-input i {
+    font-size: 24px;
+    color: #007bff;
+  }
+  

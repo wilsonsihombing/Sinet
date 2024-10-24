@@ -66,7 +66,7 @@
                                         <!-- Register link -->
                                         <div class="mt-3">
                                             <p class="small">
-                                                Don't have an account? <a href="{{ route('register') }}">Sign up</a>
+                                                Don't have an account? <a href="{{ url('/register') }}">Sign up</a>
                                             </p>
                                         </div>
                                     </form>

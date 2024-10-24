@@ -309,6 +309,17 @@ main .button-events .btn-submit:hover {
   color: #ffffff;
 }
 
+.upcoming-event h2 {
+  font-size: 40px;
+  color: #0c356a;
+  font-family: "bebas neue", cursive;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+.upcoming-event h2 span {
+  color: #ffc436;
+}
+
 .footer {
   background-color: #0c356a;
   color: white;
