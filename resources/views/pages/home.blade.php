@@ -8,7 +8,7 @@
     <!-- header -->
     <header class="text-md-left text-left">
         <h1 class="">
-            HIMPUNAN MAHASISWA <span class="subtitle">SISTEM INFORMASI</span>
+            HIMPUNAN MAHASISWA <span class="subtitle">SISTEM INFORMASI</span> 
         </h1>
         <br />
         <p>Explore, Learn,</p>
