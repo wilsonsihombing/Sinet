@@ -20,6 +20,8 @@
         href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
         rel="stylesheet" />
     <link rel="stylesheet" href="frontend/styles/qna.css" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" />
 </head>
 
 <body>
@@ -138,10 +140,12 @@
         <h1 class="">
             DARI BERTANYA <br><span class="subtitle">JADI MENGERTI</span>
         </h1>
-        <div class="question-box">
-            <input type="text" placeholder="Ajukan Pertanyaan mu!" />
+        <div class="question-box" style="display: flex; align-items: center;">
+            <input type="text" placeholder="Ajukan Pertanyaan mu!" id="questionInput" style="flex-grow: 1;" />
+            <button id="submitQuestion" style="background: none; border: none; cursor: pointer;">
+                <i class="fas fa-paper-plane"></i>
+            </button>
         </div>
-
     </header>
     <!-- Question Input -->
 
