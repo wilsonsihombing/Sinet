@@ -20,7 +20,7 @@
                             <div class="col mr-2">
                                 <div class="text-xs font-weight-bold text-primary text-uppercase mb-1">
                                     Many Events</div>
-                                <div class="h5 mb-0 font-weight-bold text-gray-800">20</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $event_package}}</div>
                             </div>
                             <div class="col-auto">
                                 <i class="fas fa-calendar fa-2x text-gray-300"></i>
@@ -38,11 +38,11 @@
                             <div class="col mr-2">
                                 <div class="text-xs font-weight-bold text-success text-uppercase mb-1">
                                     Galleries</div>
-                                <div class="h5 mb-0 font-weight-bold text-gray-800">275 post</div>
+                                <div class="h5 mb-0 font-weight-bold text-gray-800">{{ $gallery }} post</div>
                             </div>
                             <div class="col-auto">
                                 <i class="fas fa-images fa-2x text-gray-300"></i>
-                            </div>                            
+                            </div>
                         </div>
                     </div>
                 </div>

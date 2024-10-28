@@ -7,38 +7,48 @@
 @section('content')
 
     <body>
-        <div class="container proker text-center">
+        <div class="container proker text-center py-4">
             <h1>PENDIDIKAN</h1>
-            <div class="d-flex justify-content-center">
-                <div class="profile-wrapper">
-                    <div class="profile-circle">
-                        <img src="{{ url('frontend/images/kezia.png') }}" alt="Profile 1">
+            <div class="row justify-content-center">
+                <div class="col-6 col-sm-4 col-md-3 col-lg-2 my-2">
+                    <div class="profile-wrapper">
+                        <div class="profile-circle">
+                            <img src="{{ url('frontend/images/kezia.png') }}" alt="Profile 1">
+                        </div>
+                        <div class="profile-name">Rahel Simanjuntak</div>
                     </div>
-                    <div class="profile-name">Rahel Simanjuntak</div>
                 </div>
-                <div class="profile-wrapper">
-                    <div class="profile-circle">
-                        <img src="{{ url('frontend/images/kezia.png') }}" alt="Profile 1">
+                <div class="col-6 col-sm-4 col-md-3 col-lg-2 my-2">
+                    <div class="profile-wrapper">
+                        <div class="profile-circle">
+                            <img src="{{ url('frontend/images/kezia.png') }}" alt="Profile 1">
+                        </div>
+                        <div class="profile-name">Rahel Simanjuntak</div>
                     </div>
-                    <div class="profile-name">Rahel Simanjuntak</div>
                 </div>
-                <div class="profile-wrapper">
-                    <div class="profile-circle">
-                        <img src="{{ url('frontend/images/kezia.png') }}" alt="Profile 1">
+                <div class="col-6 col-sm-4 col-md-3 col-lg-2 my-2">
+                    <div class="profile-wrapper">
+                        <div class="profile-circle">
+                            <img src="{{ url('frontend/images/kezia.png') }}" alt="Profile 1">
+                        </div>
+                        <div class="profile-name">Rahel Simanjuntak</div>
                     </div>
-                    <div class="profile-name">Rahel Simanjuntak</div>
                 </div>
-                <div class="profile-wrapper">
-                    <div class="profile-circle">
-                        <img src="{{ url('frontend/images/kezia.png') }}" alt="Profile 1">
+                <div class="col-6 col-sm-4 col-md-3 col-lg-2 my-2">
+                    <div class="profile-wrapper">
+                        <div class="profile-circle">
+                            <img src="{{ url('frontend/images/kezia.png') }}" alt="Profile 1">
+                        </div>
+                        <div class="profile-name">Rahel Simanjuntak</div>
                     </div>
-                    <div class="profile-name">Rahel Simanjuntak</div>
                 </div>
-                <div class="profile-wrapper">
-                    <div class="profile-circle">
-                        <img src="{{ url('frontend/images/kezia.png') }}" alt="Profile 1">
+                <div class="col-6 col-sm-4 col-md-3 col-lg-2 my-2">
+                    <div class="profile-wrapper">
+                        <div class="profile-circle">
+                            <img src="{{ url('frontend/images/kezia.png') }}" alt="Profile 1">
+                        </div>
+                        <div class="profile-name">Rahel Simanjuntak</div>
                     </div>
-                    <div class="profile-name">Rahel Simanjuntak</div>
                 </div>
             </div>
         </div>

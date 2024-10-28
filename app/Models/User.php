@@ -21,6 +21,11 @@ class User extends Authenticatable
         'username',
         'email',
         'password',
+        'date_of_birth', 
+        'force',
+        'address',
+        'phone_number',
+        'photo',
     ];
 
     /**
@@ -42,6 +47,7 @@ class User extends Authenticatable
     {
         return [
             'email_verified_at' => 'datetime',
+            'date_of_birth' => 'datetime',
         ];
     }
 
@@ -67,11 +73,6 @@ class User extends Authenticatable
     public function qnasAnswered()
     {
         return $this->hasMany(QnA::class, 'answered_by');
-    }
-
-    public function profile()
-    {
-        return $this->hasOne(UserProfile::class, 'user_id');
     }
 
 }

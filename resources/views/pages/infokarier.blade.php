@@ -26,6 +26,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" />
 
     <link rel="stylesheet" href="frontend/styles/infokarier.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.0/font/bootstrap-icons.min.css" rel="stylesheet">
 
 </head>
 
@@ -171,9 +172,11 @@
                 <div class="lowongan-card tulis-rekomendasi"
                     style="background-color: rgba(255, 255, 255, 0.8); display: flex; flex-direction: column; justify-content: space-between; height: 150px; padding: 10px; top: 500px;">
                     <input type="text" placeholder="Tulis rekomendasi lowongan yang kamu ketahui"
-                        style="flex-grow: 1; font-style: italic;">
-                    <button style="align-self: flex-end; background: none; border: none; cursor: pointer;">
+                        style="flex-grow: 1; font-style: italic;" id="rekomendasiInput">
+                    <button id="submitRekomendasi"
+                        style="align-self: flex-end; background: none; border: none; cursor: pointer;">
                         <i class="bi bi-send-fill"></i>
+                    </button>
                 </div>
 
 

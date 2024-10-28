@@ -21,13 +21,13 @@
     </li>
 
     <li class="nav-item">
-        <a class="nav-link" href="#">
+        <a class="nav-link" href="{{ route('event-package.index') }}">
             <i class="fas fa-fw fa-tachometer-alt"></i>
             <span>Events</span></a>
     </li>
 
     <li class="nav-item">
-        <a class="nav-link" href="#">
+        <a class="nav-link" href="{{ route('gallery.index') }}">
             <i class="fas fa-fw fas fa-fw fa-images"></i>
             <span>Galeri Events</span></a>
     </li>

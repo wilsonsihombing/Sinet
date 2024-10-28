@@ -27,6 +27,13 @@ body {
             }
         }
     }
+
+    .img-avatar {
+        margin: 0;
+        width: 20px;
+        height: 20px;
+        border-radius: 100%;
+    }
 }
 
 .btn-navbar-right {
@@ -56,10 +63,59 @@ body {
         }
     }
 
+    .dropdown-menu {
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+        padding: 8px 0;
+        min-width: 200px;
+        transition: all 0.3s ease;
+
+        .dropdown-item {
+            display: flex;
+            align-items: center;
+            padding: 10px 20px;
+            color: #333;
+            font-weight: 500;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+
+        .dropdown-item:hover {
+            background-color: #f0f0f5;
+            color: #007bff;
+        }
+
+        .img-avatar {
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 10px;
+        }
+
+        i {
+            font-size: 20px;
+            color: #333;
+            margin-right: 10px; /* Spasi antara ikon dan teks */
+            margin-left: 20px;
+        }
+
+        .dropdown-item:hover i {
+            color: #007bff;
+        }
+
+        d-flex.align-items-center:hover {
+            background-color: #f8f9fa;
+            cursor: pointer;
+        }
+    }
+
     .img-user {
         width: 20px;
         height: 20px;
         margin-left: 15px;
+        border-radius: 100%;
     }
 }
 
@@ -366,22 +422,19 @@ main {
 }
 
 //upcoming events
-.upcoming-event{
-    h2{
+.upcoming-event {
+    h2 {
         font-size: 40px;
         color: #0c356a;
         font-family: "bebas neue", cursive;
         font-weight: bold;
         margin-bottom: 20px;
 
-        span{
+        span {
             color: #ffc436;
         }
     }
-
-    
 }
-
 
 // footer
 .footer {

@@ -1,5 +1,9 @@
-@include('includes.style')
-
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Login</title>
+    @include('includes.style')
+</head>
 <main>
     <section class="vh-100 d-flex align-items-center justify-content-center">
         <div class="container h-100">
@@ -8,7 +12,7 @@
                     <div class="card text-black">
                         <div class="row g-0">
                             <!-- Bagian kiri (logo + teks) -->
-                            <div class="col-lg-6 d-flex align-items-center justify-content-center bg-primary text-white">
+                            <div class="col-lg-6 d-flex align-items-center justify-content-center bg-primary text-white w-100">
                                 <div class="text-center px-3 py-4 p-md-5 mx-md-4">
                                     <img src="frontend/images/lambang bagus.png" class="img-fluid mb-4" alt="logo"
                                         width="200px" />

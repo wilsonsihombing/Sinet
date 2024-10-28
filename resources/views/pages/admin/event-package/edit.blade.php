@@ -6,7 +6,7 @@
 
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <h1 class="h3 mb-0 text-gray-800"> Edit Gallery </h1>
+        <h1 class="h3 mb-0 text-gray-800"> Edit Event Himpunan {{$item->title}}</h1>
 
     </div>
 
@@ -22,23 +22,21 @@
 
     <div class="card shadow">
         <div class="card-body">
-            <form action="{{route('gallery.update', $item->id)}}" method="POST" enctype="multipart/form-data">
+            <form action="{{route('event-package.update', $item->id)}}" method="POST">
                 @method('PUT')
                 @csrf
                 <div class="form-group">
-                    <label for="event_package_id">Event Himpunan</label>
-                    <select name="event_package_id" required class="form-control">
-                        <option value="{{$item->event_package_id}}">Jangan Diubah</option>
-                        @foreach ($event_packages as $event_package)
-                            <option value="{{$event_package->id}}">
-                                {{$event_package->title}}
-                            </option>
-                        @endforeach
-                    </select>
+                    <label for="title">Title</label>
+                    <input type="text" class="form-control" name="title" placeholder="Title" value="{{$item->title}}">
                 </div>
                 <div class="form-group">
-                    <label for="image">Image</label>
-                    <input type="file" name="image" class="form-control" placeholder="Image">
+                    <label for="location">Location</label>
+                    <input type="text" class="form-control" name="location" placeholder="Location"
+                        value="{{$item->location}}">
+                </div>
+                <div class="form-group">
+                    <label for="about">About</label>
+                    <textarea name="about" rows="10" class="d-block w-100 form-control">{{$item->about}}</textarea>
                 </div>
                 <button type="submit" class="btn btn-primary btn-block">
                     Ubah

@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Foundation\Auth\AuthenticatesUsers;
+use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
@@ -25,7 +26,17 @@ class LoginController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/';
+    protected $redirectTo = '/admin';
+    // protected function redirectTo()
+    // {
+    //     // Periksa apakah user yang login adalah admin
+    //     if (Auth::check() && Auth::user()->roles == 'ADMIN') {
+    //         return '/admin';  // Ganti dengan route atau URL halaman admin
+    //     }
+
+    //     // Redirect user biasa ke halaman lain
+    //     return '/home';  // Ganti dengan route atau URL halaman user biasa
+    // }
 
     /**
      * Create a new controller instance.

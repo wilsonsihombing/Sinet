@@ -8,6 +8,9 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class GalleryEvent extends Model
 {
+
+    protected $table = 'galleries';
+
     // use HasFactory;
     use SoftDeletes;
 
@@ -24,6 +27,5 @@ class GalleryEvent extends Model
     {
         return $this->belongsTo(EventPackage::class, 'event_package_id', 'id');
     }
-
 
 }
