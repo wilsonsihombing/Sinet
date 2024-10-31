@@ -35,94 +35,20 @@
                 </div>
 
                 <div class="section-popular-event row justify-content-center">
-                    <div class="col-sm-6 col-md-4 col-lg-3">
-                        <div class="card-event text-center d-flex flex-column"
-                            style="background-image: url('frontend/images/event1.JPG');">
-                            <div class="party-event">Wisuda</div>
-                            <div class="party-button mt-auto">
-                                <a href="{{ url('/detail') }}" class="btn btn-party-details px-4">
-                                    VIEW DETAILS
-                                </a>
+                    @foreach ($items as $item)
+                        <div class="col-sm-6 col-md-4 col-lg-3">
+                            <div class="card-event text-center d-flex flex-column"
+                                style="background-image: url('{{ $item->galleryEvents->count() ? Storage::url($item->galleryEvents->first()->image) : '' }}');">
+                                <div class="party-event">{{ $item->title }}</div>
+                                <div class="party-button mt-auto">
+                                    <a href="{{ route('details', $item->slug) }}" class="btn btn-party-details px-4">
+                                        VIEW DETAILS
+                                    </a>
+                                </div>
                             </div>
                         </div>
-                    </div>
-                    <div class="col-sm-6 col-md-4 col-lg-3">
-                        <div class="card-event text-center d-flex flex-column"
-                            style="background-image: url('frontend/images/event1.JPG');">
-                            <div class="party-event">Wisuda</div>
-                            <div class="party-button mt-auto">
-                                <a href="{{ url('/detail') }}" class="btn btn-party-details px-4">
-                                    VIEW DETAILS
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-md-4 col-lg-3">
-                        <div class="card-event text-center d-flex flex-column"
-                            style="background-image: url('frontend/images/event1.JPG');">
-                            <div class="party-event">Wisuda</div>
-                            <div class="party-button mt-auto">
-                                <a href="{{ url('/detail') }}" class="btn btn-party-details px-4">
-                                    VIEW DETAILS
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-md-4 col-lg-3">
-                        <div class="card-event text-center d-flex flex-column"
-                            style="background-image: url('frontend/images/event1.JPG');">
-                            <div class="party-event">Wisuda</div>
-                            <div class="party-button mt-auto">
-                                <a href="{{ url('/detail') }}" class="btn btn-party-details px-4">
-                                    VIEW DETAILS
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-md-4 col-lg-3">
-                        <div class="card-event text-center d-flex flex-column"
-                            style="background-image: url('frontend/images/event1.JPG');">
-                            <div class="party-event">Wisuda</div>
-                            <div class="party-button mt-auto">
-                                <a href="{{ url('/detail') }}" class="btn btn-party-details px-4">
-                                    VIEW DETAILS
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-md-4 col-lg-3">
-                        <div class="card-event text-center d-flex flex-column"
-                            style="background-image: url('frontend/images/event1.JPG');">
-                            <div class="party-event">Wisuda</div>
-                            <div class="party-button mt-auto">
-                                <a href="{{ url('/detail') }}" class="btn btn-party-details px-4">
-                                    VIEW DETAILS
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-md-4 col-lg-3">
-                        <div class="card-event text-center d-flex flex-column"
-                            style="background-image: url('frontend/images/event1.JPG');">
-                            <div class="party-event">Wisuda</div>
-                            <div class="party-button mt-auto">
-                                <a href="{{ url('/detail') }}" class="btn btn-party-details px-4">
-                                    VIEW DETAILS
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-sm-6 col-md-4 col-lg-3">
-                        <div class="card-event text-center d-flex flex-column"
-                            style="background-image: url('frontend/images/event1.JPG');">
-                            <div class="party-event">Wisuda</div>
-                            <div class="party-button mt-auto">
-                                <a href="{{ url('/detail') }}" class="btn btn-party-details px-4">
-                                    VIEW DETAILS
-                                </a>
-                            </div>
-                        </div>
-                    </div>
+                    @endforeach
+
                 </div>
             </div>
         </section>

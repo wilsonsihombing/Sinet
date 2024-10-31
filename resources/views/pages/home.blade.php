@@ -157,6 +157,7 @@
                 </div>
             </section>
         </div>
+
         <section>
             <div class="container mt-2 upcoming-event  mb-5">
                 <div class="upcoming-title text-center mb-4">
@@ -171,6 +172,7 @@
                         <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
                         {{-- <li data-target="#carouselExampleIndicators" data-slide-to="2"></li> --}}
                     </ol>
+                    
                     <div class="carousel-inner">
                         <div class="carousel-item active">
                             <img src="{{ url('frontend/images/upcoming1.png') }}" class="d-block w-100" alt="...">
@@ -179,6 +181,7 @@
                             <img src="{{ url('frontend/images/upcoming2.png') }}" class="d-block w-100" alt="...">
                         </div>
                     </div>
+                    
                     <button class="carousel-control-prev" type="button" data-target="#carouselExampleIndicators"
                         data-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>

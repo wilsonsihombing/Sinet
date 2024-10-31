@@ -1,5 +1,6 @@
 <?php
 
+use GuzzleHttp\Middleware;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Auth;
 
@@ -13,11 +14,12 @@ use App\Http\Controllers\programController;
 use App\Http\Controllers\qnaController;
 use App\Http\Controllers\Admin\EventPackageController;
 use App\Http\Controllers\Admin\GalleryController;
+use App\Http\Controllers\UpcomingEventController;
 
 
 Route::get("/", [HomeController::class, 'index'])->name('home');
 Route::get("/moreEvents", [moreEventController::class, 'index'])->name('moreEvents');
-Route::get("/detail", [detailsController::class, 'index'])->name('details');
+Route::get("/detail/{slug}", [detailsController::class, 'index'])->name('details');
 
 Route::get("/profile", [profileController::class, 'index'])->name('profile.index');
 Route::get("/profile/edit", [profileController::class, 'edit'])->name('profile.edit');
@@ -27,10 +29,18 @@ Route::get('/kerohanian', [programController::class, 'kerohanian'])->name('progr
 Route::get('/humas', [programController::class, 'humas'])->name('program.humas');
 Route::get('/kesenian', [programController::class, 'kesenian'])->name('program.kesenian');
 Route::get('/pendidikan', [programController::class, 'pendidikan'])->name('program.pendidikan');
-Route::get('/qna', [qnaController::class, 'index'])->name('qna');
+
+Route::get('/qna', [qnaController::class, 'index'])
+            ->name('qna')
+            ->middleware('auth', 'verified');
 Route::get('/answerqna', [qnaController::class, 'answer'])->name('answer.qna');
 Route::get('/seeanswer', [qnaController::class, 'seeAnswer'])->name('seeAnswer.qna');
-Route::get('/infokarier', [infoKarierController::class, 'index'])->name('info.karier');
+
+Route::get('/infokarier', [infoKarierController::class, 'index'])
+            ->name('info.karier')
+            ->middleware('auth', 'verified');
+
+
 
 Route::prefix('admin')
     ->middleware(['auth', 'isAdmin'])
@@ -38,6 +48,7 @@ Route::prefix('admin')
         Route::get('/', [DashboardController::class, 'index'])->name('dashboard');
         Route::resource('event-package', EventPackageController::class);
         Route::resource('gallery', GalleryController::class);
+        Route::resource('upcoming-event', UpcomingEventController::class);
     });
 
 Auth::routes();

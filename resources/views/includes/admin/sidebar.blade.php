@@ -31,6 +31,13 @@
             <i class="fas fa-fw fas fa-fw fa-images"></i>
             <span>Galeri Events</span></a>
     </li>
+    
+    <li class="nav-item">
+        <a class="nav-link" href="{{ route('upcoming-event.index') }}">
+            <i class="fas fa-fw fas fa-fw fa-images"></i>
+            <span>Up coming Events</span></a>
+    </li>
+
     <!-- Divider -->
     <hr class="sidebar-divider">
 
