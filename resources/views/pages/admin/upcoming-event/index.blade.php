@@ -7,7 +7,7 @@
         <!-- Page Heading -->
         <div class="d-sm-flex align-items-center justify-content-between mb-4">
             <h1 class="h3 mb-0 text-gray-800">UpComing Event </h1>
-            <a href="{{ route('event-package.create') }}" class="btn btn-sm btn-primary shadow-sm">
+            <a href="{{ route('upcoming-event.create') }}" class="btn btn-sm btn-primary shadow-sm">
                 <i class="fas fa-plus fa-sm text-white-50"></i> Tambah Upcoming Event
             </a>
         </div>
@@ -29,7 +29,9 @@
                                 <tr>
                                     <td>{{ $item->id }}</td>
                                     <td>{{ $item->title }}</td>
-                                    <td>{{ $item->image }}</td>
+                                    <td>
+                                        <img src="{{Storage::url($item->image)}}" alt="" style="width: 150px" class="img-thumbnail">
+                                    </td>
                                     <td>
                                         <a href="{{ route('upcoming-event.edit', $item->id) }}" class="btn btn-info">
                                             <i class="fa fa-pencil-alt"></i>

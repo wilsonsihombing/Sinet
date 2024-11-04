@@ -22,7 +22,7 @@ class GalleryController extends Controller
             'items' => $items
         ]);
     }   
-
+    
     /**
      * Show the form for creating a new resource.
      */
