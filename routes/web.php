@@ -14,7 +14,7 @@ use App\Http\Controllers\programController;
 use App\Http\Controllers\qnaController;
 use App\Http\Controllers\Admin\EventPackageController;
 use App\Http\Controllers\Admin\GalleryController;
-use App\Http\Controllers\UpcomingEventController;
+use App\Http\Controllers\Admin\UpcomingEventController;
 
 
 Route::get("/", [HomeController::class, 'index'])->name('home');

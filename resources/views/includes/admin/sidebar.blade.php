@@ -35,7 +35,7 @@
     <li class="nav-item">
         <a class="nav-link" href="{{ route('upcoming-event.index') }}">
             <i class="fas fa-fw fas fa-fw fa-images"></i>
-            <span>Up coming Events</span></a>
+            <span>Upcoming Events</span></a>
     </li>
 
     <!-- Divider -->

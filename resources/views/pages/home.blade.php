@@ -172,16 +172,24 @@
                         <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
                         {{-- <li data-target="#carouselExampleIndicators" data-slide-to="2"></li> --}}
                     </ol>
-                    
-                    <div class="carousel-inner">
+
+                    {{-- <div class="carousel-inner">
                         <div class="carousel-item active">
                             <img src="{{ url('frontend/images/upcoming1.png') }}" class="d-block w-100" alt="...">
                         </div>
                         <div class="carousel-item">
                             <img src="{{ url('frontend/images/upcoming2.png') }}" class="d-block w-100" alt="...">
                         </div>
+                    </div> --}}
+
+                    <div class="carousel-inner">
+                        @foreach ($items as $key => $item)
+                            <div class="carousel-item {{ $key === 0 ? 'active' : '' }}">
+                                <img src="{{ Storage::url($item->image) }}" class="d-block w-100 " style="height: 600px" alt="{{ $item->title }}">
+                            </div>
+                        @endforeach
                     </div>
-                    
+
                     <button class="carousel-control-prev" type="button" data-target="#carouselExampleIndicators"
                         data-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
