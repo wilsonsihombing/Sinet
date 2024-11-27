@@ -203,11 +203,6 @@
             </div>
         </div>
     </div>
-    </div>
-    </div>
-    </div>
-
-    </div>
 
     <!-- footer -->
     <footer class="footer">

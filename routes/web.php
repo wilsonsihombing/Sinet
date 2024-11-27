@@ -15,7 +15,9 @@ use App\Http\Controllers\qnaController;
 use App\Http\Controllers\Admin\EventPackageController;
 use App\Http\Controllers\Admin\GalleryController;
 use App\Http\Controllers\Admin\UpcomingEventController;
-
+use App\Http\Controllers\detailNewsController;
+use App\Http\Controllers\otherNewsController;
+use App\Http\Controllers\Admin\NewsController;
 
 Route::get("/", [HomeController::class, 'index'])->name('home');
 Route::get("/moreEvents", [moreEventController::class, 'index'])->name('moreEvents');
@@ -40,7 +42,8 @@ Route::get('/infokarier', [infoKarierController::class, 'index'])
             ->name('info.karier')
             ->middleware('auth', 'verified');
 
-
+Route::get('/otherNews', [otherNewsController::class, 'index'])->name('otherNews');
+Route::get('/detailNews/{slug}', [detailNewsController::class, 'index'])->name('detailNews');
 
 Route::prefix('admin')
     ->middleware(['auth', 'isAdmin'])
@@ -49,6 +52,8 @@ Route::prefix('admin')
         Route::resource('event-package', EventPackageController::class);
         Route::resource('gallery', GalleryController::class);
         Route::resource('upcoming-event', UpcomingEventController::class);
+        Route::resource('news', NewsController::class);
+        
     });
 
 Auth::routes();

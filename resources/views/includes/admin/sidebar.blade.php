@@ -22,9 +22,11 @@
 
     <li class="nav-item">
         <a class="nav-link" href="{{ route('event-package.index') }}">
-            <i class="fas fa-fw fa-tachometer-alt"></i>
-            <span>Events</span></a>
+            <i class="fas fa-calendar-alt"></i> <!-- Ikon kalender acara -->
+            <span>Events</span>
+        </a>
     </li>
+    
 
     <li class="nav-item">
         <a class="nav-link" href="{{ route('gallery.index') }}">
@@ -37,6 +39,13 @@
             <i class="fas fa-fw fas fa-fw fa-images"></i>
             <span>Upcoming Events</span></a>
     </li>
+
+    <li class="nav-item">
+        <a class="nav-link" href="{{ route('news.index') }}">
+            <i class="fas fa-newspaper"></i> <!-- Ikon berita -->
+            <span>News</span>
+        </a>
+    </li>    
 
     <!-- Divider -->
     <hr class="sidebar-divider">
