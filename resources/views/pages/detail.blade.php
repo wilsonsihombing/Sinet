@@ -7,6 +7,7 @@
         <section class="section-details-header"></section>
         <section class="section-details-content">
             <div class="container">
+
                 <!-- breadcrumb -->
                 {{-- <div class="row">
                     <div class="col p-0">
@@ -19,6 +20,7 @@
                         </nav>
                     </div>
                 </div> --}}
+
                 <div class="row">
                     <div class="col p-0">
                         <nav>
@@ -66,9 +68,9 @@
 
                             <h2>Tentang Events</h2>
                             <p>
-                               {!! $item->about !!} 
+                                {!! $item->about !!}
                             </p>
-                            
+
                         </div>
                     </div>
                 </div>

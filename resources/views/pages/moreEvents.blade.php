@@ -9,17 +9,6 @@
         <section class="section-popular-content" id="popularContent">
             <div class="container">
                 {{-- breadcrumb --}}
-                {{-- <div class="row">
-                    <div class="col p-0">
-                        <nav>
-                            <ol class="breadcrumb">
-                                <li class="breadcrumb-item">Home</li>
-                                <li class="breadcrumb-item active">More Event</li>
-                            </ol>
-                        </nav>
-                    </div>
-                </div> --}}
-                
                 <div class="row">
                     <div class="col p-0">
                         <nav>
@@ -32,6 +21,18 @@
                                 </li>
                             </ol>
                         </nav>
+                    </div>
+                </div>
+                
+                <!-- Form Pencarian -->
+                <div class="row mb-4">
+                    <div class="col-md-12">
+                        <form class="d-flex" method="GET" action="{{ route('moreEvents') }}">
+                            <input aria-label="Search" class="form-control mr-3" placeholder="Search Events" type="search" name="search" value="{{ request()->input('search') }}" />
+                            <button class="btn btn-outline-primary" type="submit">
+                                Search
+                            </button>
+                        </form>
                     </div>
                 </div>
 
@@ -49,8 +50,15 @@
                             </div>
                         </div>
                     @endforeach
-
                 </div>
+
+                <!-- Pagination -->
+                <div class="row justify-content-center">
+                    <div class="col-md-12">
+                        {{ $items->links('pagination::bootstrap-5') }} <!-- Menampilkan pagination -->
+                    </div>
+                </div>
+
             </div>
         </section>
     </main>

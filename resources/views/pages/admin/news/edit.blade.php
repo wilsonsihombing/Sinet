@@ -6,7 +6,7 @@
 
     <!-- Page Heading -->
     <div class="d-sm-flex align-items-center justify-content-between mb-4">
-        <h1 class="h3 mb-0 text-gray-800"> Edit Upcoming </h1>
+        <h1 class="h3 mb-0 text-gray-800"> Edit News </h1>
 
     </div>
 
@@ -22,13 +22,19 @@
 
     <div class="card shadow">
         <div class="card-body">
-            <form action="{{route('upcoming-event.update', $item->id)}}" method="POST" enctype="multipart/form-data">
+            <form action="{{route('news.update', $item->id)}}" method="POST" enctype="multipart/form-data">
                 @method('PUT')
                 @csrf
                 <div class="form-group">
                     <label for="title">Title</label>
-                    <input type="text" class="form-control" name="title">
+                    <input type="text" class="form-control" name="title" placeholder="title" value="{{ $item->title }}">
                 </div>
+
+                <div class="form-group">
+                    <label for="body">Body</label>
+                    <textarea class="form-control" name="body" id="body" rows="5" placeholder="Tuliskan isi berita di sini" value="{{ $item->body }}"></textarea>
+                </div>
+
                 <div class="form-group">
                     <label for="image">Image</label>
                     <input type="file" name="image" class="form-control" placeholder="Image">

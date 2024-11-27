@@ -185,7 +185,8 @@
                     <div class="carousel-inner">
                         @foreach ($items as $key => $item)
                             <div class="carousel-item {{ $key === 0 ? 'active' : '' }}">
-                                <img src="{{ Storage::url($item->image) }}" class="d-block w-100 " style="height: 600px" alt="{{ $item->title }}">
+                                <img src="{{ Storage::url($item->image) }}" class="d-block w-100 " style="height: 600px"
+                                    alt="{{ $item->title }}">
                             </div>
                         @endforeach
                     </div>
@@ -244,6 +245,26 @@
             <a href="{{ url('/moreEvents') }}" class="btn btn-submit">SEE MORE EVENTS</a>
         </div>
 
-
+        <div class="container mb-5">
+            <h1 class="news-title">Berita Terbaru</h1>
+            <hr style="border-top: 3px solid #0d6efd; width: 50px; margin-top: 0;" />
+            <div class="row">
+                @foreach ($newsItem as $news)
+                    <div class="col-md-3 news-item">
+                        <a href="{{ route('detailNews', $news->slug) }}" style="text-decoration: none; color: inherit;">
+                            <img alt="{{ $news->title }}" height="400" src="{{ Storage::url($news->image) }}" width="600" />
+                            <h5 class="mt-4">{{ $news->title }}</h5>
+                            <p class="news-body">
+                                {{ Str::limit($news->body, 100, '...') }}
+                            </p>
+                            <span class="news-date">{{ $news->created_at->format('d M Y') }}</span>
+                        </a>                        
+                    </div>
+                @endforeach
+            </div>
+            <div class="text-end">
+                <a class="btn-more" href="{{ url('/otherNews') }}"> Selengkapnya </a>
+            </div>
+        </div>
     </main>
 @endsection
