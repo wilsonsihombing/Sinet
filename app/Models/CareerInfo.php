@@ -8,20 +8,16 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 class CareerInfo extends Model
 {
-    // use HasFactory;
+    use HasFactory, SoftDeletes;
 
-    use SoftDeletes;
+    protected $table = 'info_karier'; // Nama tabel di database
 
+    // Kolom yang bisa diisi
     protected $fillable = [
-        'title', 
+        'title',
         'description',
         'posted_date',
-        'expiry_date',
-        'posted_by'
+        'expired_date',
+        'posted_by',
     ];
-
-    public function postedBy()
-    {
-        return $this->belongsTo(User::class, 'posted_by', 'id');
-    }
 }
