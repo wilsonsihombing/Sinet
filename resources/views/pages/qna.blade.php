@@ -123,9 +123,17 @@
         @endif
         <p>{{ $question->question }}</p> <!-- Pertanyaan -->
         <div>
-            <a href="{{ url('/seeAnswer', ['id' => $question->id]) }}"><button>Jawab</button></a>
-            <a href="#">Lihat jawaban..</a>
-        </div>
+    <!-- Tombol Jawab -->
+    <a href="{{ url('/jawaban') }}">
+        <button>Jawab</button>
+    </a>
+
+    <!-- Tombol Lihat Jawaban -->
+    <a href="{{ route('seeAnswer.qna', ['id' => $question->id]) }}">
+        Lihat jawaban..
+    </a>
+</div>
+
     </div>
 @endforeach
 @if ($errors->any())
