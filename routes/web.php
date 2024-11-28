@@ -35,6 +35,9 @@ Route::get('/pendidikan', [programController::class, 'pendidikan'])->name('progr
 Route::get('/qna', [qnaController::class, 'index'])
             ->name('qna')
             ->middleware('auth', 'verified');
+Route::get('/qna', [qnaController::class, 'showQuestions'])->name('qna.index');
+Route::post('/qna', [QnAController::class, 'store']);
+Route::get('/questions', [QnAController::class, 'index']);
 Route::get('/answerqna', [qnaController::class, 'answer'])->name('answer.qna');
 Route::get('/seeanswer', [qnaController::class, 'seeAnswer'])->name('seeAnswer.qna');
 
