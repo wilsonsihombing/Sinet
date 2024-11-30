@@ -124,7 +124,7 @@
         <p>{{ $question->question }}</p> <!-- Pertanyaan -->
         <div>
     <!-- Tombol Jawab -->
-    <a href="{{ url('/answerqna') }}">
+    <a href="{{ url('/answerqna', ['id' => $question->id]) }}">
         <button>Jawab</button>
     </a>
 

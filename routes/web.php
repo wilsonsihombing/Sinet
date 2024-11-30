@@ -32,14 +32,14 @@ Route::get('/humas', [programController::class, 'humas'])->name('program.humas')
 Route::get('/kesenian', [programController::class, 'kesenian'])->name('program.kesenian');
 Route::get('/pendidikan', [programController::class, 'pendidikan'])->name('program.pendidikan');
 
-Route::get('/qna', [qnaController::class, 'index'])
-            ->name('qna')
-            ->middleware('auth', 'verified');
-Route::get('/qna', [qnaController::class, 'showQuestions'])->name('qna.index');
-Route::post('/qna', [QnAController::class, 'store']);
-Route::get('/questions', [QnAController::class, 'index']);
-Route::get('/answerqna', [qnaController::class, 'answer'])->name('answer.qna');
-Route::get('/seeanswer', [qnaController::class, 'seeAnswer'])->name('seeAnswer.qna');
+Route::get('/qna', [qnaController::class, 'showQuestions'])->name('qna')->middleware(['auth', 'verified']); // Menampilkan pertanyaan
+Route::post('/qna', [qnaController::class, 'store'])->name('qna.store')->middleware('auth'); // Menyimpan pertanyaan baru
+Route::get('/answerqna', [qnaController::class, 'answer'])->name('answer.qna')->middleware('auth'); // Halaman menjawab pertanyaan
+Route::get('/answerqna/{id}', [qnaController::class, 'answerPage'])->middleware('auth'); // Halaman detail jawaban
+Route::post('/submit-answer-qna/{id}', [qnaController::class, 'submitAnswer'])->name('submit.answer.qna')->middleware('auth'); // Submit jawaban
+Route::get('/seeanswer', [qnaController::class, 'seeAnswer'])->name('seeAnswer.qna')->middleware('auth'); // Melihat jawaban
+            
+
 
 Route::get('/infokarier', [infoKarierController::class, 'index'])
             ->name('info.karier')

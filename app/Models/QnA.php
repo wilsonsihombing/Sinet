@@ -27,5 +27,14 @@ class QnA extends Model
             ]);
     }
 
+    public function answeredBy()
+{
+    return $this->belongsTo(User::class, 'answered_by')
+        ->withDefault([
+            'name' => 'Pengguna yang menjawab tidak ditemukan',
+        ]);
+}
+
+
 
 }
