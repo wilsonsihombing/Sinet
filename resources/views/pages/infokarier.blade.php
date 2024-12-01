@@ -28,6 +28,43 @@
     <link rel="stylesheet" href="frontend/styles/infokarier.css" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.0/font/bootstrap-icons.min.css" rel="stylesheet">
 
+    <!-- Swiper -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+
+    <style>
+        .head-qna h2 {
+            color: white;
+            /* Ubah warna tulisan menjadi putih */
+        }
+
+        .career-form-container {
+            background-image: url('frontend/images/background.jpg');
+            /* Ganti dengan path gambar Anda */
+            background-size: cover;
+            background-position: center;
+            padding: 50px 0;
+        }
+
+        .career-form {
+            background-color: rgba(255, 255, 255, 0.8);
+            /* Tambahkan transparansi agar konten tetap terlihat */
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .swiper {
+            width: 600px;
+            height: 300px;
+        }
+
+        .scrollable-card {
+            height: 300px;
+            overflow-y: auto;
+            background-color: rgba(255, 255, 255, 0.8);
+        }
+    </style>
+
 </head>
 
 <body>
@@ -74,117 +111,142 @@
                     </ul>
 
                     @guest
-                        <!-- Tombol Masuk jika pengguna belum login -->
-                        <form class="form-inline my-lg-0 d-sm-block d-md-none">
-                            <button class="btn btn-login" type="button"
-                                style="margin-right: 10px; background-color: #0174be; color: #ffffff;"
-                                onclick="location.href='{{ url('login') }}';">Masuk</button>
-                        </form>
-                        <form class="form-inline my-lg-0 d-none d-md-block">
-                            <button class="btn btn-login" type="button"
-                                style="margin-right: 10px; background-color: #0174be; color: #ffffff;"
-                                onclick="location.href='{{ url('login') }}';">Masuk</button>
-                        </form>
+                    <!-- Tombol Masuk jika pengguna belum login -->
+                    <form class="form-inline my-lg-0 d-sm-block d-md-none">
+                        <button class="btn btn-login" type="button"
+                            style="margin-right: 10px; background-color: #0174be; color: #ffffff;"
+                            onclick="location.href='{{ url('login') }}';">Masuk</button>
+                    </form>
+                    <form class="form-inline my-lg-0 d-none d-md-block">
+                        <button class="btn btn-login" type="button"
+                            style="margin-right: 10px; background-color: #0174be; color: #ffffff;"
+                            onclick="location.href='{{ url('login') }}';">Masuk</button>
+                    </form>
                     @endguest
 
                     @auth
-                        <!-- Mobile button -->
-                        <form class="form-inline my-lg-0 d-sm-block d-md-none" action="{{ url('logout') }}" method="POST">
-                            @csrf
-                            <div class="dropdown">
-                                <button class="btn btn-login btn-navbar-right px-0 dropdown-toggle" type="button"
-                                    id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
-                                    aria-expanded="false">
-                                    MyHimsi
-                                    <img src="frontend/images/user profile.png" alt="user" class="img-user ml-1" />
+                    <!-- Mobile button -->
+                    <form class="form-inline my-lg-0 d-sm-block d-md-none" action="{{ url('logout') }}" method="POST">
+                        @csrf
+                        <div class="dropdown">
+                            <button class="btn btn-login btn-navbar-right px-0 dropdown-toggle" type="button"
+                                id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true"
+                                aria-expanded="false">
+                                MyHimsi
+                                <img src="frontend/images/user profile.png" alt="user" class="img-user ml-1" />
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                <a class="dropdown-item d-flex align-items-center" href="/profile">
+                                    <i class="bi bi-person-circle mr-2"></i> <!-- Ikon Profile -->
+                                    Profile
+                                </a>
+                                <button type="submit" class="dropdown-item d-flex align-items-center">
+                                    <i class="bi bi-box-arrow-right mr-2"></i> <!-- Ikon Logout -->
+                                    Logout
                                 </button>
-                                <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                    <a class="dropdown-item d-flex align-items-center" href="/profile">
-                                        <i class="bi bi-person-circle mr-2"></i> <!-- Ikon Profile -->
-                                        Profile
-                                    </a>
-                                    <button type="submit" class="dropdown-item d-flex align-items-center">
-                                        <i class="bi bi-box-arrow-right mr-2"></i> <!-- Ikon Logout -->
-                                        Logout
-                                    </button>
-                                </div>
                             </div>
-                        </form>
+                        </div>
+                    </form>
 
-                        <!-- Desktop button -->
-                        <form class="form-inline my-lg-0 d-none d-md-block" action="{{ url('logout') }}" method="POST">
-                            @csrf
-                            <div class="dropdown">
-                                <button class="btn btn-login btn-navbar-right px-0 dropdown-toggle" type="button"
-                                    id="dropdownMenuDesktop" data-toggle="dropdown" aria-haspopup="true"
-                                    aria-expanded="false">
-                                    MyHimsi
-                                    <img src="frontend/images/user profile.png" alt="user" class="img-user ml-1" />
+                    <!-- Desktop button -->
+                    <form class="form-inline my-lg-0 d-none d-md-block" action="{{ url('logout') }}" method="POST">
+                        @csrf
+                        <div class="dropdown">
+                            <button class="btn btn-login btn-navbar-right px-0 dropdown-toggle" type="button"
+                                id="dropdownMenuDesktop" data-toggle="dropdown" aria-haspopup="true"
+                                aria-expanded="false">
+                                MyHimsi
+                                <img src="frontend/images/user profile.png" alt="user" class="img-user ml-1" />
+                            </button>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuDesktop">
+                                <a class="dropdown-item d-flex align-items-center" href="/profile">
+                                    <i class="bi bi-person-circle mr-2" style="font-size: 20px;"></i>
+                                    <!-- Ikon Profile -->
+                                    Profile
+                                </a>
+                                <button type="submit" class="dropdown-item d-flex align-items-center">
+                                    <i class="bi bi-box-arrow-right mr-2" style="font-size: 20px;"></i>
+                                    <!-- Ikon Logout -->
+                                    Logout
                                 </button>
-                                <div class="dropdown-menu" aria-labelledby="dropdownMenuDesktop">
-                                    <a class="dropdown-item d-flex align-items-center" href="/profile">
-                                        <i class="bi bi-person-circle mr-2" style="font-size: 20px;"></i>
-                                        <!-- Ikon Profile -->
-                                        Profile
-                                    </a>
-                                    <button type="submit" class="dropdown-item d-flex align-items-center">
-                                        <i class="bi bi-box-arrow-right mr-2" style="font-size: 20px;"></i>
-                                        <!-- Ikon Logout -->
-                                        Logout
-                                    </button>
-                                </div>
                             </div>
-                        </form>
+                        </div>
+                    </form>
                     @endauth
                 </div>
             </div>
         </nav>
     </div>
 
-    <!-- header -->
-    <header class="text-md-left text-left head-qna">
-        <!-- <h1 class=""> -->
-        <main>
-            <section class="lowongan-section">
-                <div class="lowongan-cards">
-                    <div class="lowongan-card" style="background-color: rgba(255, 255, 255, 0.8); ">
-                        <h3>Amanda</h3>
-                        <p class="p-class">Hey guys! Buat adik-adik tingkat atau teman-teman yang lagi cari kesempatan
-                            magang/kerja, aku ada beberapa info loker..</p>
-                        <div class="arrow"><i class="bi bi-chevron-compact-down"></i></div>
-                    </div>
+    <!-- Header Section -->
+    <header class="text-left head-qna mt-5 pt-5">
+        <div class="container">
+            <h2 class="mb-4">Daftar Info Karir</h2>
+            @if($careerInfos->isEmpty())
+            <p>Tidak ada info karir yang tersedia.</p>
+            @else
+            <div class="row">
+                <div class="swiper">
+                    <div class="swiper-wrapper">
+                        @foreach($careerInfos as $careerInfo)
+                        <div class="swiper-slide">
+                            <div class="col-12">
+                                <div class="card shadow-lg scrollable-card">
+                                    <div class="card-body">
+                                        <h5 class="card-title">{{ $careerInfo->title }}</h5>
+                                        <p class="card-text">{{ $careerInfo->description }}</p>
+                                        <p class="card-text"><small class="text-muted">Diposting pada: {{ $careerInfo->posted_date }}</small></p>
+                                        <p class="card-text"><small class="text-muted">Kadaluarsa: {{ $careerInfo->expired_date ? $careerInfo->expired_date : 'Tidak ada' }}</small></p>
+                                    </div>
+                                </div>
 
-                    <div class="lowongan-card" style="background-color: rgba(255, 255, 255, 0.8); ">
-                        <h3>Jesica</h3>
-                        <p class="p-class">Hey, adik-adik dan teman-teman yang lagi cari pengalaman baru! Ada beberapa
-                            lowongan magang dan kerja yang seru nih...</p>
-                        <div class="arrow"><i class="bi bi-chevron-compact-down"></i></div>
-                    </div>
-
-                    <div class="lowongan-card" style="background-color: rgba(255, 255, 255, 0.8); ">
-                        <h3>Chika</h3>
-                        <p class="p-class">Hey adik-adik dan teman-teman! Di tempat aku kerja sekarang lagi ada
-                            lowongan analyst nih. Buat kalian yang merasa cocok...</p>
-                        <div class="arrow"><i class="bi bi-chevron-compact-down"></i></div>
+                            </div>
+                        </div>
+                        @endforeach
                     </div>
                 </div>
+            </div>
+            @endif
 
-                <div class="lowongan-card tulis-rekomendasi"
-                    style="background-color: rgba(255, 255, 255, 0.8); display: flex; flex-direction: column; justify-content: space-between; height: 150px; padding: 10px; top: 500px;">
-                    <input type="text" placeholder="Tulis rekomendasi lowongan yang kamu ketahui"
-                        style="flex-grow: 1; font-style: italic;" id="rekomendasiInput">
-                    <button id="submitRekomendasi"
-                        style="align-self: flex-end; background: none; border: none; cursor: pointer;">
-                        <i class="bi bi-send-fill"></i>
-                    </button>
-                </div>
-
-
-            </section>
-        </main>
-        </h1>
+            <!-- If we need navigation buttons -->
+            <div class="swiper-button-prev"></div>
+            <div class="swiper-button-next"></div>
+        </div>
     </header>
 
+
+    <!-- Formulir Karir Section -->
+    <div class="career-form-container shadow-lg">
+        <div class="container">
+            <div class="row w-100">
+                <div class="col-12">
+                    <div class="career-form">
+                        <h3 class="text-center mb-5">Tambah Info Karir</h3>
+                        <form action="{{ route('career.store') }}" method="POST">
+                            @csrf
+                            <div class="form-group">
+                                <label for="title">Judul</label>
+                                <input type="text" class="form-control" id="title" name="title" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="description">Deskripsi</label>
+                                <textarea class="form-control" id="description" name="description" rows="5" required></textarea>
+                            </div>
+                            <div class="form-group">
+                                <label for="posted_date">Tanggal Diposting</label>
+                                <input type="date" class="form-control" id="posted_date" name="posted_date" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="expired_date">Tanggal Kadaluarsa</label>
+                                <input type="date" class="form-control" id="expired_date" name="expired_date">
+                            </div>
+                            <button type="submit" class="btn btn-primary btn-block">Tambah Info Karir</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- footer -->
     <footer class="footer">
@@ -193,8 +255,7 @@
                 <div class="footer-left ml-1">
                     <p class="footer-heading">THANK YOU FOR VISITING OUR WEBSITE</p>
                     <nav class="footer-nav">
-                        <a href="{{ url('/') }}">Home</a> | <a
-                            href="{{ route('program.kesenian') }}">Program</a>
+                        <a href="{{ url('/') }}">Home</a> | <a href="{{ route('program.kesenian') }}">Program</a>
                         |
                         <a href="{{ url('/moreEvents') }}">Events</a> | <a href="{{ url('/qna') }}">QnA</a> |
                         <a href="#">Karier</a>
@@ -239,10 +300,37 @@
 
     </footer>
 
-    <!-- CDN -->
+    <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <script type="module">
+        import Swiper from 'https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.mjs'
+
+        const swiper = new Swiper('.swiper', {
+            // Optional parameters
+            direction: 'horizontal',
+            loop: true,
+
+            // If we need pagination
+            pagination: {
+                el: '.swiper-pagination',
+            },
+
+            // Navigation arrows
+            navigation: {
+                nextEl: '.swiper-button-next',
+                prevEl: '.swiper-button-prev',
+            },
+
+            // And if we need scrollbar
+            scrollbar: {
+                el: '.swiper-scrollbar',
+            },
+        });
+    </script>
 
 </body>
 
