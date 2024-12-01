@@ -32,6 +32,7 @@ Route::get('/humas', [programController::class, 'humas'])->name('program.humas')
 Route::get('/kesenian', [programController::class, 'kesenian'])->name('program.kesenian');
 Route::get('/pendidikan', [programController::class, 'pendidikan'])->name('program.pendidikan');
 
+//QNA
 Route::get('/qna', [qnaController::class, 'index'])
     ->name('qna')
     ->middleware('auth', 'verified');
@@ -41,6 +42,9 @@ Route::get('/seeanswer', [qnaController::class, 'seeAnswer'])->name('seeAnswer.q
 Route::get('/infokarier', [infoKarierController::class, 'index'])
     ->name('info.karier')
     ->middleware('auth', 'verified');
+
+// Rute untuk menyimpan info karir
+Route::post('/career/store', [infoKarierController::class, 'store'])->name('career.store');
 
 Route::get('/otherNews', [otherNewsController::class, 'index'])->name('otherNews');
 Route::get('/detailNews/{slug}', [detailNewsController::class, 'index'])->name('detailNews');

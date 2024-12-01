@@ -7,6 +7,7 @@ use App\Http\Controllers\API\UpcomingEventController;
 use App\Http\Controllers\API\GalleryController;
 use App\Http\Controllers\API\UserController;
 use App\Http\Controllers\API\EventPackageController;
+use App\Http\Controllers\API\InfoKarierController;
 
 
 Route::get('/user', function (Request $request) {
@@ -54,7 +55,10 @@ Route::middleware('auth:sanctum')->group(function () {
 });
 
 
-
-
-
-
+// Grup route untuk fitur Info Karier
+Route::middleware('auth:sanctum')->group(function () {
+    Route::get('/info-karier', [InfoKarierController::class, 'index']); // Mendapatkan semua info karier
+    Route::post('/info-karier', [InfoKarierController::class, 'store']); // Membuat info karier baru
+    Route::get('/info-karier/{id}', [InfoKarierController::class, 'show']); // Mendapatkan info karier berdasarkan ID
+    Route::delete('/info-karier/{id}', [InfoKarierController::class, 'destroy']); // Menghapus info karier
+});
