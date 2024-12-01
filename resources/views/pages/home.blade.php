@@ -246,7 +246,7 @@
         </div>
 
         <div class="container mb-5">
-            <h1 class="news-title">Berita Terbaru</h1>
+            <h1 class="news-title" style="color: #0d6efd">Berita <span style="#yellow">Terbaru</span> </h1>
             <hr style="border-top: 3px solid #0d6efd; width: 50px; margin-top: 0;" />
             <div class="row">
                 @foreach ($newsItem as $news)
