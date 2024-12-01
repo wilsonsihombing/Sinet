@@ -33,14 +33,17 @@ Route::get('/kesenian', [programController::class, 'kesenian'])->name('program.k
 Route::get('/pendidikan', [programController::class, 'pendidikan'])->name('program.pendidikan');
 
 Route::get('/qna', [qnaController::class, 'index'])
-            ->name('qna')
-            ->middleware('auth', 'verified');
+    ->name('qna')
+    ->middleware('auth', 'verified');
 Route::get('/answerqna', [qnaController::class, 'answer'])->name('answer.qna');
 Route::get('/seeanswer', [qnaController::class, 'seeAnswer'])->name('seeAnswer.qna');
 
 Route::get('/infokarier', [infoKarierController::class, 'index'])
-            ->name('info.karier')
-            ->middleware('auth', 'verified');
+    ->name('info.karier')
+    ->middleware('auth', 'verified');
+
+// Rute untuk menyimpan info karir
+Route::post('/career/store', [infoKarierController::class, 'store'])->name('career.store');
 
 Route::get('/otherNews', [otherNewsController::class, 'index'])->name('otherNews');
 Route::get('/detailNews/{slug}', [detailNewsController::class, 'index'])->name('detailNews');
@@ -53,7 +56,6 @@ Route::prefix('admin')
         Route::resource('gallery', GalleryController::class);
         Route::resource('upcoming-event', UpcomingEventController::class);
         Route::resource('news', NewsController::class);
-        
     });
 
 Auth::routes();
