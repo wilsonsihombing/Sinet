@@ -57,32 +57,38 @@ header {
     background-position: center;
     background-repeat: no-repeat;
 }
+
 header h1 {
-    font-size: 50px;
+    font-size: 150px;
     color: #ffffff;
     font-family: "Bebas Neue", cursive;
     font-weight: bold;
     margin-left: 70px;
     margin-right: 70px;
+    margin-top: 10px;
 }
+
 header h1 .subtitle {
     color: #ffc436;
     display: inline;
 }
+
 header p {
     font-size: 50px;
     color: #ffffff;
     font-family: "Poly", cursive;
     font-weight: bold;
     margin-left: 70px;
-    margin-top: -20px;
+    margin-top: 20px;
     margin-right: 70px;
 }
+
 header p .subtitle {
     color: #ffc436;
     display: inline;
     margin-right: auto;
 }
+
 header .btn-explore {
     background-color: #0174be;
     color: #ffffff;
@@ -90,62 +96,132 @@ header .btn-explore {
     font-family: "bebas neue", cursive;
     font-size: 30px;
 }
+
 header .btn-explore:hover {
     background-color: #266d99;
     color: #ffffff;
 }
 
+/* Responsif untuk heading di Q&A */
 .head-qna h1 {
     font-size: 150px;
 }
+
 .head-qna span {
-    margin-left: 400px;
+    margin-left: 50px;
 }
+
+
+
 .head-qna .question-box {
     display: flex;
     align-items: center;
     background-color: #fff;
-    border-radius: 50px;
-    padding: 20px;
-    width: 100%;
-    max-width: 800px;
+    border: 2px solid #ddd;
+    border-radius: 30px;
+    padding: 0px 30px;
+    width: 818px; /* Lebar sesuai permintaan */
+    height: 118px; /* Tinggi sesuai permintaan */
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
     bottom: 20px;
+    justify-content: space-between;
 }
+
 .head-qna .question-box input[type="text"] {
     border: none;
     outline: none;
-    padding: 10px;
-    font-size: 16px; /* Adjusted to a more practical size */
+    padding: 10px 20px;
+    font-size: 16px;
     border-radius: 50px;
     width: 100%;
     max-width: 800px;
 }
 
-.container {
-    display: flex;
-    justify-content: space-between;
-    padding: 20px;
+.head-qna .question-box button {
+    background-color: #ffffff; /* Ganti warna tombol ke hijau */
+    color: black;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 50%;
+    cursor: pointer;
+    margin-left: 10px;
 }
 
-.content {
-    flex: 2; /* Left content takes more space */
-}
-.content h1 {
-    font-size: 2rem;
-    margin-bottom: 10px;
-}
-.content p {
-    font-size: 1rem;
-    color: #333;
+.head-qna .question-box button:hover {
+    background-color: #0c356a; /* Ganti warna tombol saat hover */
 }
 
+
+    header p {
+        font-size: 30px;
+        margin-left: 20px;
+        margin-right: 20px;
+    }
+
+    .head-qna h1 {
+        font-size: 70px; /* Ukuran lebih kecil untuk mobile */
+    }
+
+    .head-qna .question-box {
+        width: 90%; /* Lebar 90% pada layar kecil */
+        padding: 15px;
+        position: relative;
+        bottom: 10px;
+    }
+
+    .head-qna .question-box input[type="text"] {
+        font-size: 14px; /* Ukuran font lebih kecil di mobile */
+        max-width: 100%;
+    }
+
+    .container {
+        padding: 15px;
+        display: block;
+        text-align: center;
+    }
+
+    .content h1 {
+        font-size: 1.5rem;
+        margin-bottom: 10px;
+    }
+
+    .content p {
+        font-size: 0.9rem;
+    }
+
+
+/* Responsif lebih kecil (Mobile) */
+@media (max-width: 480px) {
+    .head-qna .question-box input[type="text"] {
+        padding: 10px;
+        font-size: 14px;
+        max-width: 180px; /* Adjust max-width for very small screens */
+    }
+
+    .head-qna .question-box {
+        padding: 10px;
+        position: relative;
+        bottom: 5px;
+    }
+
+    .head-qna .question-box input[type="text"] {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    .head-qna .question-box button {
+        padding: 8px;
+        font-size: 16px;
+    }
+}
+
+/* Menambahkan scroll bar pada question list */
 .question-list {
-    flex: 1; /* Question list takes less space */
-    background-color: #f9f9f9;
+    flex: 1;
+    background-color: #ebe7e7;
     padding: 10px;
     border-radius: 10px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -153,30 +229,76 @@ header .btn-explore:hover {
     position: absolute;
     right: 0;
     bottom: 0;
+    width: 100%;
+    max-height: 500px; /* Menetapkan tinggi maksimum untuk area yang dapat digulir */
+    overflow-y: auto; /* Menambahkan scroll bar vertikal jika konten lebih tinggi dari max-height */
 }
+
+/* Untuk memastikan scroll bar hanya muncul saat konten melebihi batas */
+.question-list .question-box {
+    max-width: 100%;
+    overflow-y: auto;
+    height: 100%;
+}
+
+/* Styling untuk scroll bar */
+.question-list::-webkit-scrollbar {
+    width: 8px; /* Lebar scroll bar */
+}
+
+.question-list::-webkit-scrollbar-track {
+    background: #f1f1f1; /* Warna latar belakang scroll bar */
+}
+
+.question-list::-webkit-scrollbar-thumb {
+    background: #888; /* Warna scroll bar */
+    border-radius: 10px; /* Membuat sudut scroll bar melengkung */
+}
+
+.question-list::-webkit-scrollbar-thumb:hover {
+    background: #555; /* Warna scroll bar saat hover */
+}
+
+
+/* Header for question list */
 .question-list h3 {
     text-align: center;
     font-size: 1.5rem;
     margin-bottom: 10px;
 }
+
+/* Scrollable area for question items */
 .question-list .question-box {
     max-width: 100%;
     overflow-y: auto;
     height: 500px;
 }
+
+/* Styling for individual question items */
 .question-list .question-box .question-item {
-    background-color: #fff;
+    background-color: #232222;
     border-radius: 10px;
     padding: 10px;
     margin-bottom: 10px;
-    border: 1px solid #e1e1e1;
+    border: 2px solid #ccc; /* Tambahkan border untuk membedakan item */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-    align-items: center;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease; /* Tambahkan efek transisi */
 }
+
+/* Highlighted effect on hover */
+.question-list .question-box .question-item:hover {
+    border-color: #0174be; /* Ubah warna border saat hover */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Tambahkan efek bayangan saat hover */
+}
+
+
+/* Question header styling */
 .question-list .question-box .question-item .question-header p {
     font-weight: bold;
     margin: 0;
 }
+
+/* Body of the question */
 .question-list .question-box .question-item .question-body {
     margin-top: 5px;
 }
@@ -184,12 +306,15 @@ header .btn-explore:hover {
     margin: 0;
     color: #333;
 }
+
+/* Footer for the question with button and link */
 .question-list .question-box .question-item .question-footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
     margin-top: 10px;
 }
+
 .question-list .question-box .question-item .question-footer button {
     background-color: #3b5998;
     color: white;
@@ -198,16 +323,78 @@ header .btn-explore:hover {
     border-radius: 5px;
     cursor: pointer;
 }
+
 .question-list .question-box .question-item .question-footer button:hover {
     background-color: #365492;
 }
+
 .question-list .question-box .question-item .question-footer a {
     text-decoration: none;
     color: #3b5998;
 }
+
 .question-list .question-box .question-item .question-footer a:hover {
     text-decoration: underline;
 }
+
+/* Responsif untuk ukuran layar lebih kecil (tablet dan mobile) */
+@media (max-width: 1024px) {
+    .question-list {
+        position: relative; /* Make question list position relative on smaller screens */
+        max-width: none; /* Remove max-width to take full width */
+        width: 100%;
+        bottom: 20px;
+    }
+
+    .question-list h3 {
+        font-size: 1.25rem;
+        margin-bottom: 15px;
+    }
+
+    .question-list .question-box {
+        height: 400px; /* Adjust the height for better viewing on smaller screens */
+    }
+
+    .question-list .question-box .question-item {
+        padding: 8px;
+    }
+}
+
+/* Responsif untuk perangkat mobile (<= 480px) */
+@media (max-width: 480px) {
+    .question-list {
+        padding: 15px; /* Add more padding for mobile */
+        bottom: 10px; /* Adjust bottom position */
+    }
+
+    .question-list h3 {
+        font-size: 1.1rem;
+        margin-bottom: 10px;
+    }
+
+    .question-list .question-box {
+        height: 300px; /* Reduce height for small mobile screens */
+    }
+
+    .question-list .question-box .question-item {
+        padding: 5px;
+    }
+
+    .question-list .question-box .question-item .question-footer {
+        flex-direction: column; /* Stack the footer items for mobile */
+        align-items: flex-start; /* Align items to the start for mobile */
+    }
+
+    .question-list .question-box .question-item .question-footer button {
+        width: 100%; /* Make the button full width on mobile */
+        margin-bottom: 10px;
+    }
+
+    .question-list .question-box .question-item .question-footer a {
+        font-size: 12px; /* Adjust font size for mobile */
+    }
+}
+
 
 .footer {
     background-color: #0c356a;
@@ -306,5 +493,4 @@ header .btn-explore:hover {
     border: 1px solid #ffffff;
     width: 100%;
     margin-top: 10px;
-} 
-/*# sourceMappingURL=main.css.map */
+} /*# sourceMappingURL=main.css.map */
