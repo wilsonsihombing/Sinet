@@ -20,4 +20,16 @@ class CareerInfo extends Model
         'expired_date',
         'posted_by',
     ];
+
+    // Cast kolom tanggal menjadi objek datetime
+    protected $casts = [
+        'posted_date' => 'datetime',
+        'expired_date' => 'datetime',
+    ];
+
+    // Relasi ke tabel User
+    public function poster()
+    {
+        return $this->belongsTo(User::class, 'posted_by', 'id');
+    }
 }
