@@ -48,52 +48,59 @@ body {
     height: 20px;
     margin-left: 15px;
   }
+
+  .penanya-name {
+    color: #ffc436;  /* Mengubah warna nama penanya menjadi kuning */
+    font-weight: bold; /* Optional, agar nama penanya lebih tegas */
+}
   
-  header {
-    padding: 180px 0 165px;
-    margin-top: 0px;
-    background-image: url("../images/dashboardupdate.png");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-  }
-  header h1 {
-    font-size: 50px;
-    color: #ffffff;
-    font-family: "Bebas Neue", cursive;
-    font-weight: bold;
-    margin-left: 70px;
-    margin-right: 70px;
-  }
-  header h1 .subtitle {
-    color: #ffc436;
-    display: inline;
-  }
-  header p {
-    font-size: 50px;
-    color: #ffffff;
-    font-family: "Poly", cursive;
-    font-weight: bold;
-    margin-left: 70px;
-    margin-top: -20px;
-    margin-right: 70px;
-  }
-  header p .subtitle {
-    color: #ffc436;
-    display: inline;
-    margin-right: auto;
-  }
-  header .btn-explore {
-    background-color: #0174be;
-    color: #ffffff;
-    margin-left: 70px;
-    font-family: "bebas neue", cursive;
-    font-size: 30px;
-  }
-  header .btn-explore:hover {
-    background-color: #266d99;
-    color: #ffffff;
-  }
+header {
+  padding: 180px 0 165px;
+  margin-top: 0px;
+  background-image: url("../images/dashboardupdate.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+/* Styling untuk nama penanya */
+.penanya-name {
+  color: #ffc436; /* Warna kuning untuk nama penanya */
+  font-weight: bold; /* Menebalkan teks nama penanya */
+}
+
+/* Styling untuk textarea */
+textarea.form-control {
+  border-radius: 8px; /* Membuat sudut textarea lebih bulat */
+  background-color: rgba(255, 255, 255, 0.7); /* Membuat background textarea sedikit transparan */
+  border: 1px solid #ccc; /* Memberikan border abu-abu terang */
+  padding: 10px; /* Memberikan sedikit ruang di dalam textarea */
+  font-size: 14px; /* Menyesuaikan ukuran font */
+  resize: none; /* Mencegah textarea untuk diubah ukurannya oleh pengguna */
+}
+
+/* Styling untuk button kirim */
+button[type="submit"] {
+  background-color: transparent; /* Tanpa background */
+  border: 1px solid #000000; /* Border hitam */
+  color: #000000; /* Warna teks hitam */
+  border-radius: 12px; /* Membuat button lebih bulat */
+  padding: 10px 20px; /* Memberikan ruang tambahan pada button */
+  font-size: 14px; /* Menyesuaikan ukuran font button */
+  cursor: pointer; /* Menambahkan pointer saat hover */
+}
+
+/* Styling untuk button kirim saat hover */
+button[type="submit"]:hover {
+  background-color: #f0f0f0; /* Memberikan warna latar saat hover */
+  color: #000000; /* Menjaga warna teks tetap hitam saat hover */
+}
+
+/* Menambahkan jarak di bawah textarea untuk button */
+.position-relative {
+  position: relative;
+  margin-bottom: 20px; /* Memberikan jarak bawah pada textarea */
+}
+
   
   main {
     padding: 10px 0;
