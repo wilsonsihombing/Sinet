@@ -42,7 +42,6 @@ class profileController extends Controller
         $user->address = $request->input('alamat');
         $user->phone_number = $request->input('phone');
 
-
         if ($request->hasFile('avatar')) {
             if ($user->photo) {
                 Storage::delete($user->photo);

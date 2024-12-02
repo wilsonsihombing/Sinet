@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Admin\DashboardController;
 use App\Http\Controllers\detailsController;
 use App\Http\Controllers\HomeController;
-use App\Http\Controllers\infoKarierController;
+use App\Http\Controllers\CareerInfoController;
 use App\Http\Controllers\moreEventController;
 use App\Http\Controllers\profileController;
 use App\Http\Controllers\programController;
@@ -38,15 +38,25 @@ Route::get('/answerqna', [qnaController::class, 'answer'])->name('answer.qna')->
 Route::get('/answerqna/{id}', [qnaController::class, 'answerPage'])->middleware('auth'); // Halaman detail jawaban
 Route::post('/submit-answer-qna/{id}', [qnaController::class, 'submitAnswer'])->name('submit.answer.qna')->middleware('auth'); // Submit jawaban
 Route::get('/seeanswer', [qnaController::class, 'seeAnswer'])->name('seeAnswer.qna')->middleware('auth'); // Melihat jawaban
-            
 
-Route::get('/infokarier', [infoKarierController::class, 'index'])
-    ->name('info.karier')
-    ->middleware('auth', 'verified');
 
-// Rute untuk menyimpan info karir
-Route::post('/career/store', [infoKarierController::class, 'store'])->name('career.store');
+//infokarier
+// Route::get('/infokarier', [infoKarierController::class, 'index'])
+//     ->name('info.karier')
+//     ->middleware('auth', 'verified');
+// Route::post('/career/store', [infoKarierController::class, 'store'])->name('career.store');
+// Route::post('/career/create', [infoKarierController::class, 'create'])->name('career.create');
+// Route::post('/career/show', [infoKarierController::class, 'show'])->name('career.show');
 
+// Menampilkan halaman daftar info karir
+Route::get('/infokarier', [CareerInfoController::class, 'index'])->name('career.index');
+Route::get('/infokarier/create', [CareerInfoController::class, 'create'])->name('career.create');
+Route::post('/infokarier/store', [CareerInfoController::class, 'store'])->name('career.store');
+Route::get('/infokarier/{id}', [CareerInfoController::class, 'show'])->name('career.show');
+Route::get('/infokarier/search', [CareerInfoController::class, 'search'])->name('career.search');
+
+
+//News
 Route::get('/otherNews', [otherNewsController::class, 'index'])->name('otherNews');
 Route::get('/detailNews/{slug}', [detailNewsController::class, 'index'])->name('detailNews');
 
@@ -58,6 +68,7 @@ Route::prefix('admin')
         Route::resource('gallery', GalleryController::class);
         Route::resource('upcoming-event', UpcomingEventController::class);
         Route::resource('news', NewsController::class);
+
     });
 
 Auth::routes();

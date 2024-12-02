@@ -1,12 +1,14 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\API;
 
 use App\Models\CareerInfo; // Gunakan model CareerInfo
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\Controller;
 
-class InfoKarierController extends Controller
+
+class infoKarierController extends Controller
 {
     // 1. Menampilkan semua data info karier
     public function index()

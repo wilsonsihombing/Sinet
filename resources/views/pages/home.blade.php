@@ -245,8 +245,8 @@
             <a href="{{ url('/moreEvents') }}" class="btn btn-submit">SEE MORE EVENTS</a>
         </div>
 
-        <div class="container mb-5">
-            <h1 class="news-title">Berita Terbaru</h1>
+        {{-- <div class="container mb-5">
+            <h1 class="news-title" style="color: #0d6efd">Berita <span style="#yellow">Terbaru</span> </h1>
             <hr style="border-top: 3px solid #0d6efd; width: 50px; margin-top: 0;" />
             <div class="row">
                 @foreach ($newsItem as $news)
@@ -265,6 +265,31 @@
             <div class="text-end">
                 <a class="btn-more" href="{{ url('/otherNews') }}"> Selengkapnya </a>
             </div>
+        </div> --}}
+
+        <div class="container mb-5">
+            <h1 class="news-title text-primary">Berita <span class="text-warning">Terbaru</span></h1>
+            <hr class="news-divider" />
+            <div class="row">
+                @foreach ($newsItem as $news)
+                    <div class="col-md-3 news-item">
+                        <a href="{{ route('detailNews', $news->slug) }}" class="news-link">
+                            <div class="news-card shadow-sm">
+                                <img class="news-image" src="{{ Storage::url($news->image) }}" alt="{{ $news->title }}" />
+                                <div class="news-content">
+                                    <h5 class="news-title">{{ $news->title }}</h5>
+                                    <p class="news-body">{{ Str::limit($news->body, 100, '...') }}</p>
+                                    <span class="news-date">{{ $news->created_at->format('d M Y') }}</span>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                @endforeach
+            </div>
+            <div class="text-end">
+                <a class="btn btn-primary btn-more" href="{{ url('/otherNews') }}">Selengkapnya</a>
+            </div>
         </div>
+        
     </main>
 @endsection
