@@ -38,22 +38,14 @@ Route::get('/answerqna', [qnaController::class, 'answer'])->name('answer.qna')->
 Route::get('/answerqna/{id}', [qnaController::class, 'answerPage'])->middleware('auth'); // Halaman detail jawaban
 Route::post('/submit-answer-qna/{id}', [qnaController::class, 'submitAnswer'])->name('submit.answer.qna')->middleware('auth'); // Submit jawaban
 Route::get('/seeanswer', [qnaController::class, 'seeAnswer'])->name('seeAnswer.qna')->middleware('auth'); // Melihat jawaban
+Route::post('/qna/{id}/answer', [QnAController::class, 'submitAnswer'])->name('submit.answer.qna');
 
-
-//infokarier
-// Route::get('/infokarier', [infoKarierController::class, 'index'])
-//     ->name('info.karier')
-//     ->middleware('auth', 'verified');
-// Route::post('/career/store', [infoKarierController::class, 'store'])->name('career.store');
-// Route::post('/career/create', [infoKarierController::class, 'create'])->name('career.create');
-// Route::post('/career/show', [infoKarierController::class, 'show'])->name('career.show');
-
-// Menampilkan halaman daftar info karir
 Route::get('/infokarier', [CareerInfoController::class, 'index'])->name('career.index');
 Route::get('/infokarier/create', [CareerInfoController::class, 'create'])->name('career.create');
 Route::post('/infokarier/store', [CareerInfoController::class, 'store'])->name('career.store');
 Route::get('/infokarier/{id}', [CareerInfoController::class, 'show'])->name('career.show');
 Route::get('/infokarier/search', [CareerInfoController::class, 'search'])->name('career.search');
+
 
 
 //News
