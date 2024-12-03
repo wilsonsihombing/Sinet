@@ -47,6 +47,21 @@ Route::get('/infokarier/{id}', [CareerInfoController::class, 'show'])->name('car
 Route::get('/infokarier/search', [CareerInfoController::class, 'search'])->name('career.search');
 
 
+Route::get('/qna', [qnaController::class, 'index'])
+    ->name('qna')
+    ->middleware('auth', 'verified');
+Route::get('/answerqna', [qnaController::class, 'answer'])->name('answer.qna');
+Route::get('/seeanswer', [qnaController::class, 'seeAnswer'])->name('seeAnswer.qna');
+
+
+Route::get('/infokarier', [infoKarierController::class, 'index'])
+    ->name('info.karier')
+    ->middleware('auth', 'verified');
+
+// Rute untuk menyimpan info karir
+Route::post('/career/store', [infoKarierController::class, 'store'])->name('career.store');
+
+
 
 //News
 Route::get('/otherNews', [otherNewsController::class, 'index'])->name('otherNews');
