@@ -32,7 +32,7 @@
 
             <div class="footer-bottom">
                 <div class="footer-logo-wrapper">
-                    <img src="frontend/images/lambang bagus.png" alt="SI Logo" class="footer-logo" />
+                <img src="{{ asset('frontend/images/lambang bagus.png') }}" alt="SI Logo" class="footer-logo" />
                 </div>
 
                 <div class="footer-title">

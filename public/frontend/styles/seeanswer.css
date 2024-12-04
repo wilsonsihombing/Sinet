@@ -61,11 +61,7 @@ header {
     background-repeat: no-repeat;
 }
 
-.container {
-    margin: 2rem auto;
-    padding: 1rem;
-    max-width: 800px;
-}
+
 
 .title {
     text-align: center;
@@ -75,46 +71,23 @@ header {
     font-family: "bebas neue", cursive;
     color: #ffff;
 }
-.question-card {
-    margin-bottom: 10px;
-    border: 1px solid #007bff;
-    border-radius: 5px;
-    overflow: hidden;
-}
 
-.user-name {
-    font-weight: normal;
-    font-size: 1rem;
-    color: #0c0c0c;
-}
 
-p {
-    font-size: 15px;
-    color: #333;
-    margin: 0;
-}
 
-.instructions {
-    font-size: 27px;
-    font-family: "bebas neue", cursive;
-    font-weight: bold;
-    color: #ffffff; /* Warna teks putih */
-    background-color: #0c356a; /* Warna background biru tua */
-    display: inline-block; /* Membuat elemen berukuran sesuai konten */
-    padding: 10px 20px; /* Padding proporsional di sekitar teks */
-    border-radius: 15px; /* Sudut elemen sedikit melengkung */
-    margin-left: 100px;
-}
+
+
 
 
 
 .question-header {
-    background-color: #333;
+    background-color: #8888;
     color: white;
     padding: 0.75rem 1rem;
     font-weight: bold;
-    opacity: 0.7;
+    opacity: 0.8;
 }
+
+
 
 .question-body {
     padding: 1rem;
@@ -123,21 +96,49 @@ p {
     opacity: 0.7;
 }
 
+/* Untuk elemen <p> dalam question-body */
+.question-body p {
+    font-family: 'Georgia', serif; /* Font untuk teks pertanyaan */
+    font-size: 1.2rem; /* Ukuran font */
+    font-weight: 600; /* Ketebalan teks */
+    color: #070707; /* Warna biru terang untuk teks pertanyaan */
+    margin: 0; /* Hilangkan margin default */
+    padding: 10px; /* Tambahkan jarak dalam */
+    background-color: #ffffff; /* Background putih */
+    border: 1px solid #d4e4fd; /* Border biru muda */
+    border-radius: 4px; /* Membuat border membulat */
+}
+
+/* Untuk elemen <p> dalam answer-body */
+.answer-body p {
+    font-family: 'Georgia', serif; /* Font untuk teks jawaban */
+    font-size: 1.1rem; /* Ukuran font */
+    font-weight: 500; /* Ketebalan teks */
+    color: #004d40; /* Warna hijau gelap untuk teks jawaban */
+    margin: 0; /* Hilangkan margin default */
+    padding: 10px; /* Tambahkan jarak dalam */
+    background-color: #f9f9f9; /* Background abu-abu muda */
+    border: 1px solid #b2dfdb; /* Border hijau muda */
+    border-radius: 4px; /* Membuat border membulat */
+}
+
+
 /* Gaya untuk bagian jawaban */
 .answer-section {
     margin-top: 2rem;
+    
 }
 
 .answer-card {
     margin-bottom: 5px;
-    border: 1px solid #28a745;
+    border: 1px solid #0174be;
     border-radius: 5px;
     overflow: hidden;
     opacity: 0.7;
 }
 
 .answer-header {
-    background-color: #28a745;
+    background-color: #0174be;
     color: white;
     padding: 0.75rem 1rem;
     font-weight: bold;
@@ -146,7 +147,54 @@ p {
 .answer-body {
     padding: 1rem;
     background-color: #f9f9f9;
-    font-size: 1rem;
+}
+
+.answer-section h2 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ffc436;  /* Warna teks */
+    margin-bottom: 20px;
+    font-family: 'Roboto', sans-serif;  /* Gunakan font yang lebih bersih */
+}
+
+
+
+
+/* Styling untuk jawaban */
+.answer-list {
+    max-height: 400px;  /* Menentukan tinggi maksimal untuk jawaban yang dapat digulir */
+    overflow-y: auto;   /* Mengaktifkan scroll jika jawaban lebih banyak */
+    transition: max-height 0.3s ease-in-out;  /* Animasi saat menggulir */
+}
+
+.answer-card {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+.scroll-btn {
+    display: block;      /* Tombol hanya tampil jika ada lebih dari dua jawaban */
+    margin-top: 20px;
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: #007bff;
+}
+
+.scroll-btn:hover {
+    color: #0056b3;
+}
+
+/* Tampilkan tombol saat ada lebih dari dua jawaban */
+.scroll-btn {
+    text-align: center;
+    font-size: 18px;
+    color: #007bff;
+    cursor: pointer;
 }
 
 /* Teks untuk jawaban kosong */
@@ -159,143 +207,3 @@ p {
 
 
 
-.footer {
-    background-color: #0c356a;
-    color: white;
-    padding: 20px 0;
-    text-align: center;
-}
-.footer .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    
-}
-.footer .footer-content {
-    display: flex;
-    justify-content: space-between;
-    width: 100%;
-    max-width: 1200px;
-    padding: 20px 0;
-
-}
-.footer .footer-content .footer-left,
-.footer .footer-content .footer-right {
-    flex: 1;
-    padding: 5px;
-}
-.footer .footer-heading {
-    font-size: 1.5rem;
-    margin-bottom: 5px;
-    font-family: "bebas neue", cursive;
-    color: white;
-}
-.footer .footer-nav a {
-    color: white;
-    text-decoration: none;
-    margin: 0 5px;
-    font-family: "bebas neue", cursive;
-}
-.footer .footer-nav a:hover {
-    text-decoration: underline;
-}
-.footer .follow-us {
-    margin-top: 5px;
-    font-size: 1.5rem;
-    font-family: "bebas neue", cursive;
-    margin-bottom: 5px;
-    color: white;
-}
-.footer .footer-social a {
-    color: white;
-    text-decoration: none;
-    margin: 0 5px;
-    font-family: "bebas neue", cursive;
-    font-size: 1rem;
-}
-.footer .footer-social a i {
-    margin-right: 5px;
-}
-.footer .footer-right p {
-    margin: 5px 0;
-}
-.footer .footer-contact-heading {
-    font-size: 1.5rem;
-    font-family: "bebas neue", cursive;
-    color: white;
-}
-.footer .footer-bottom {
-    display: flex;
-    align-items: center;
-    margin: 10px 0;
-    
-}
-.footer .footer-bottom .footer-logo-wrapper {
-    padding: 10px;
-    border-radius: 5px;
-    background-size: cover;
-}
-.footer .footer-bottom .footer-logo {
-    width: 60px;
-    height: 60px;
-    margin-bottom: 10px;
-    position: relative;
-    background-image: #ffffff;
-}
-.footer .footer-bottom .footer-title {
-    font-size: 1.5rem;
-    margin-left: 10px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    
-}
-.footer .footer-bottom .footer-title .title {
-    margin: 0;
-    font-family: "bebas neue", cursive;
-    font-size: 1.2rem;
-    
-}
-.footer .footer-bottom .footer-title .subtitle {
-    font-family: "roboto", sans-serif;
-    font-size: 0.8rem;
-}
-.footer .footer-copyright .footer-line {
-    border: 1px solid #ffffff;
-    width: 100%;
-    margin-top: 10px;
-    
-} 
-
-
-
-/* Teks dan tautan di footer */
-.footer p,
-.footer a {
-    color: #ffffff !important; /* Pastikan warna teks dan tautan menjadi putih */
-    text-decoration: none; /* Hilangkan garis bawah */
-}
-
-/* Teks pada bagian lokasi, email, dan lainnya */
-.footer .footer-contact-heading,
-.footer .footer-contact p {
-    color: #ffffff !important; /* Warna teks lokasi dan email menjadi putih */
-}
-
-/* Teks pada bagian Del Institute of Technology */
-.footer-title .title,
-.footer-title .subtitle {
-    color: #ffffff !important; /* Warna teks di bagian title */
-}
-
-/* Teks copyright */
-.footer-copyright p {
-    color: #ffffff !important; /* Warna teks copyright */
-    font-size: 14px; /* Ukuran teks copyright */
-}
-
-/* Gaya untuk ikon */
-.footer i {
-    color: #ffffff !important; /* Warna ikon di footer menjadi putih */
-}
-/*# sourceMappingURL=main.css.map */

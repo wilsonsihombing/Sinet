@@ -73,13 +73,13 @@ class qnaController extends Controller
         if (!$id) {
             return redirect()->back()->with('error', 'ID tidak diberikan.');
         }
-    
-        $question = Qna::with(['postedBy', 'answeredBy'])->find($id);
-    
+
+        $question = QnA::with(['answers.answeredBy', 'postedBy'])->find($id);
+
         if (!$question) {
             abort(404, 'Pertanyaan tidak ditemukan.');
         }
-    
+
         return view('pages.seeAnswer', compact('question'));
     }
 
