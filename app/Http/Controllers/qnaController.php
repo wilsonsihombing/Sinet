@@ -58,22 +58,19 @@ class qnaController extends Controller
     public function submitAnswer(Request $request, $id)
     {
     $request->validate([
-        'answer' => 'required|string|max:5000',
+        'answer' => 'required|string',
     ]);
 
-    $question = QnA::find($id);
+    $question = QnA::findOrFail($id);
 
-    if (!$question) {
-        return redirect()->route('qna')->withErrors(['Pertanyaan tidak ditemukan.']);
-    }
-
-    // Update jawaban
-    $question->update([
+    // Simpan jawaban ke tabel `answers`
+    $question->answers()->create([
         'answer' => $request->input('answer'),
-        'answered_by' => auth()->id(), // ID pengguna yang memberikan jawaban
+        'answered_by' => auth()->id(),
     ]);
 
-    return redirect()->route('qna')->with('success', 'Jawaban berhasil disimpan.');
+    return redirect()->route('qna')->with('success', 'Jawaban berhasil disubmit');
     }
+
 
 }

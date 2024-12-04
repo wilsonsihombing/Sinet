@@ -109,25 +109,32 @@
         </nav>
     </div>
 
-    <!-- Content Section -->
-    <header class="text-md-left text-left">
     @extends('layouts.app')
+
+@section('content')
+<header class="text-md-left text-left">
     <div class="container">
         <div class="chat-box">
             @if(isset($question))
                 <div class="chat-question">
-                    <p><strong></strong><span class = "penanya-name"> {{ $question->user->name ?? 'Nama tidak tersedia' }}</p>
+                    <p><strong></strong> <span class="penanya-name" style="color: #FFC107;">{{ $question->user->name ?? 'Nama tidak tersedia' }}</span></p>
                     <p><strong>Pertanyaan:</strong> {{ $question->question }}</p>
                 </div>
+
+                <!-- Form untuk submit jawaban -->
                 <form action="{{ route('submit.answer.qna', ['id' => $question->id]) }}" method="POST">
                     @csrf
-                    <div class="position-relative">
-                    <label for="answer">Jawaban Anda:</label>
-                    <textarea id="answer" name="answer" class="form-control" rows="5" required></textarea>
-                    <button type="submit" class="btn btn-primary position-absolute" style="right: 10px; bottom: 10px;">
-                        <i class="fas fa-paper-plane"></i> Kirim
-                    </button>
-                </div>
+                    <div class="form-group">
+                        <label for="answer">Jawaban Anda:</label>
+                        <textarea id="answer" name="answer" class="form-control" rows="5" required></textarea>
+                    </div>
+                    
+                    <!-- Button di bawah kotak jawaban -->
+                    <div class="text-right">
+                        <button type="submit" class="btn btn-primary">
+                            <i class="fas fa-paper-plane"></i> Kirim
+                        </button>
+                    </div>
                 </form>
             @else
                 <div class="alert alert-warning">
@@ -137,6 +144,8 @@
         </div>
     </div>
 </header>
+@endsection
+
 
 
     <!-- Footer -->
