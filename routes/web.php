@@ -39,6 +39,11 @@ Route::get('/answerqna/{id}', [qnaController::class, 'answerPage'])->middleware(
 Route::post('/submit-answer-qna/{id}', [qnaController::class, 'submitAnswer'])->name('submit.answer.qna')->middleware('auth'); // Submit jawaban
 Route::get('/seeanswer', [qnaController::class, 'seeAnswer'])->name('seeAnswer.qna')->middleware('auth'); // Melihat jawaban
 Route::post('/qna/{id}/answer', [QnAController::class, 'submitAnswer'])->name('submit.answer.qna');
+Route::get('/answerqna', [qnaController::class, 'answer'])->name('answer.qna');
+Route::get('/seeanswer', [qnaController::class, 'seeAnswer'])->name('seeAnswer.qna');
+Route::get('/seeAnswer/{id}', [qnaController::class, 'seeAnswer'])->name('seeAnswer.qna')->middleware('auth'); // Melihat jawaban
+
+
 
 Route::get('/infokarier', [CareerInfoController::class, 'index'])->name('career.index');
 Route::get('/infokarier/create', [CareerInfoController::class, 'create'])->name('career.create');
@@ -47,11 +52,8 @@ Route::get('/infokarier/{id}', [CareerInfoController::class, 'show'])->name('car
 Route::get('/infokarier/search', [CareerInfoController::class, 'search'])->name('career.search');
 
 
-Route::get('/qna', [qnaController::class, 'index'])
-    ->name('qna')
-    ->middleware('auth', 'verified');
-Route::get('/answerqna', [qnaController::class, 'answer'])->name('answer.qna');
-Route::get('/seeanswer', [qnaController::class, 'seeAnswer'])->name('seeAnswer.qna');
+     
+
 
 
 Route::get('/infokarier', [infoKarierController::class, 'index'])

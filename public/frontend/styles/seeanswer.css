@@ -61,38 +61,35 @@ header {
     background-repeat: no-repeat;
 }
 
-.question-box {
-    background-color: #ffffff73;
-    padding: 100px 30px 165px;
-    border-radius: 150px;
+.container {
+    margin: 2rem auto;
+    padding: 1rem;
     max-width: 800px;
-    height: 100px;
-    margin: 0 auto;
-    padding: 0 25px;
-    box-shadow: 0px px 6px rgba(0, 0, 0, 0.1);
 }
 
-.input-box {
-    display: flex;
-    align-items: center;
+.title {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    margin-top: -10px;
+    font-size: 3rem;
+    font-family: "bebas neue", cursive;
+    color: #ffff;
+}
+.question-card {
     margin-bottom: 10px;
-}
-
-.img-user {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    margin-right: 5px;
+    border: 1px solid #007bff;
+    border-radius: 5px;
+    overflow: hidden;
 }
 
 .user-name {
     font-weight: normal;
+    font-size: 1rem;
     color: #0c0c0c;
 }
 
 p {
-    font-size: 20px;
-    font-weight: bold;
+    font-size: 15px;
     color: #333;
     margin: 0;
 }
@@ -105,34 +102,58 @@ p {
     background-color: #0c356a; /* Warna background biru tua */
     display: inline-block; /* Membuat elemen berukuran sesuai konten */
     padding: 10px 20px; /* Padding proporsional di sekitar teks */
-    border-radius: 5px; /* Sudut elemen sedikit melengkung */
+    border-radius: 15px; /* Sudut elemen sedikit melengkung */
     margin-left: 100px;
 }
 
-.answer-box-container {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    margin-top: 30px;
-}
 
-.answer-box {
-    background-color: #ffffff73;
-    padding: 20px;
-    border-radius: 25px;
-    text-align: left;
-    flex: 1;
-    max-width: 200px;
-    height: 300px;
-    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
-    font-size: 12px;
+
+.question-header {
+    background-color: #333;
+    color: white;
+    padding: 0.75rem 1rem;
     font-weight: bold;
-    color: #333;
+    opacity: 0.7;
 }
 
-.answer-box:hover {
-    background-color: #d4d4d4;
-    cursor: pointer;
+.question-body {
+    padding: 1rem;
+    background-color: #f9f9f9;
+    font-size: 1rem;
+    opacity: 0.7;
+}
+
+/* Gaya untuk bagian jawaban */
+.answer-section {
+    margin-top: 2rem;
+}
+
+.answer-card {
+    margin-bottom: 5px;
+    border: 1px solid #28a745;
+    border-radius: 5px;
+    overflow: hidden;
+    opacity: 0.7;
+}
+
+.answer-header {
+    background-color: #28a745;
+    color: white;
+    padding: 0.75rem 1rem;
+    font-weight: bold;
+}
+
+.answer-body {
+    padding: 1rem;
+    background-color: #f9f9f9;
+    font-size: 1rem;
+}
+
+/* Teks untuk jawaban kosong */
+.no-answer {
+    margin-left: 1rem;
+    font-style: italic;
+    color: #ffff;
 }
 
 
@@ -148,6 +169,7 @@ p {
     display: flex;
     flex-direction: column;
     align-items: center;
+    
 }
 .footer .footer-content {
     display: flex;
@@ -155,6 +177,7 @@ p {
     width: 100%;
     max-width: 1200px;
     padding: 20px 0;
+
 }
 .footer .footer-content .footer-left,
 .footer .footer-content .footer-right {
@@ -165,6 +188,7 @@ p {
     font-size: 1.5rem;
     margin-bottom: 5px;
     font-family: "bebas neue", cursive;
+    color: white;
 }
 .footer .footer-nav a {
     color: white;
@@ -180,6 +204,7 @@ p {
     font-size: 1.5rem;
     font-family: "bebas neue", cursive;
     margin-bottom: 5px;
+    color: white;
 }
 .footer .footer-social a {
     color: white;
@@ -197,11 +222,13 @@ p {
 .footer .footer-contact-heading {
     font-size: 1.5rem;
     font-family: "bebas neue", cursive;
+    color: white;
 }
 .footer .footer-bottom {
     display: flex;
     align-items: center;
     margin: 10px 0;
+    
 }
 .footer .footer-bottom .footer-logo-wrapper {
     padding: 10px;
@@ -221,11 +248,13 @@ p {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    
 }
 .footer .footer-bottom .footer-title .title {
     margin: 0;
     font-family: "bebas neue", cursive;
     font-size: 1.2rem;
+    
 }
 .footer .footer-bottom .footer-title .subtitle {
     font-family: "roboto", sans-serif;
@@ -235,4 +264,38 @@ p {
     border: 1px solid #ffffff;
     width: 100%;
     margin-top: 10px;
+    
+} 
+
+
+
+/* Teks dan tautan di footer */
+.footer p,
+.footer a {
+    color: #ffffff !important; /* Pastikan warna teks dan tautan menjadi putih */
+    text-decoration: none; /* Hilangkan garis bawah */
 }
+
+/* Teks pada bagian lokasi, email, dan lainnya */
+.footer .footer-contact-heading,
+.footer .footer-contact p {
+    color: #ffffff !important; /* Warna teks lokasi dan email menjadi putih */
+}
+
+/* Teks pada bagian Del Institute of Technology */
+.footer-title .title,
+.footer-title .subtitle {
+    color: #ffffff !important; /* Warna teks di bagian title */
+}
+
+/* Teks copyright */
+.footer-copyright p {
+    color: #ffffff !important; /* Warna teks copyright */
+    font-size: 14px; /* Ukuran teks copyright */
+}
+
+/* Gaya untuk ikon */
+.footer i {
+    color: #ffffff !important; /* Warna ikon di footer menjadi putih */
+}
+/*# sourceMappingURL=main.css.map */
