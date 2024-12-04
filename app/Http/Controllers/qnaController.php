@@ -15,9 +15,6 @@ class qnaController extends Controller
         return view('pages.jawaban');
     }
 
-    public function seeAnswer(Request $request){
-        return view('pages.seeAnswer');
-    }
 
     public function store(Request $request)
     {
@@ -70,6 +67,20 @@ class qnaController extends Controller
     ]);
 
     return redirect()->route('qna')->with('success', 'Jawaban berhasil disubmit');
+    }
+    public function seeAnswer($id = null)
+    {
+        if (!$id) {
+            return redirect()->back()->with('error', 'ID tidak diberikan.');
+        }
+    
+        $question = Qna::with(['postedBy', 'answeredBy'])->find($id);
+    
+        if (!$question) {
+            abort(404, 'Pertanyaan tidak ditemukan.');
+        }
+    
+        return view('pages.seeAnswer', compact('question'));
     }
 
 

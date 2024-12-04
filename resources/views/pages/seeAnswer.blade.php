@@ -7,6 +7,8 @@
     <title>Sinet</title>
     <!-- Bootstrap -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+
 
     <!-- font bebasneue -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -19,7 +21,8 @@
     <link
         href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
         rel="stylesheet" />
-    <link rel="stylesheet" href="frontend/styles/seeanswer.css" />
+    <link rel="stylesheet" href="{{ asset('frontend/styles/seeanswer.css') }}" />
+
 </head>
 
 <body>
@@ -28,7 +31,7 @@
         <nav class="row navbar navbar-expand-lg navbar-light bg-white navbar-custom fixed-top">
             <div class="col-md-0.5 offset-md-1">
                 <a href="#" class="navbar-brand">
-                    <img src="frontend/images/logo.png" alt="logo" />
+                <img src="{{ asset('frontend/images/logo.png') }}" alt="logo" />
                 </a>
             </div>
             <div class="col-md-7">
@@ -132,62 +135,80 @@
         </nav>
     </div>
 
-    <!-- Header -->
+    <!-- Content Section -->
     <header>
-        <div class="question-box">
-            <div class="input-box py-2">
-                <img src="frontend/images/user profile.png" alt="user" class="img-user ml-1"
-                    style="width: 3%; height: 3%;">
-                <span class="user-name">Rosco</span>
-            </div>
-            <p>Sebaiknya mengambil MBKM semester berapa?</p>
-        </div>
+        <div class="container">
+            <h1 class="title">Questions and Answers</h1>
 
-        <div class="title-answer">
-            <h1 class="instructions">Answer :</h1>
-        </div>
+            <!-- Card untuk Pertanyaan -->
+            <div class="question-card">
+                <div class="question-header">
+                    <strong>{{ $question->postedBy->name ?? 'Anonymous' }}</strong> asked:
+                </div>
+                <div class="question-body">
+                    <p>{{ $question->question }}</p>
+                </div>
+            </div>
 
-        <div class="answer-box-container">
-            <div class="answer-box">
-                <div class="input-box">
-                    <img src="frontend/images/user profile.png" alt="user" class="img-user ml-1"
-                        style="width: 15%; height: 15%">
-                    <span class="user-name">Rosco</span>
+            <!-- Card untuk Jawaban -->
+            @if (!empty($question->answer))
+                <div class="answer-section">
+                    <div class="answer-card">
+                        <div class="answer-header">
+                            Answered by: <strong>{{ $question->answeredBy->name ?? 'Anonymous' }}</strong>
+                        </div>
+                        <div class="answer-body">
+                            <p>{{ $question->answer }}</p>
+                        </div>
+                    </div>
                 </div>
-                Tergantung sih sama jurusanmu juga. Beberapa teman di jurusan lain ada yang ngambil semester 6, tapi di
-                tempatku ada yang nunggu sampai semester 7 biar lebih siap. Saran aku sih, ambil setelah sebagian besar
-                mata kuliah inti kamu udah kelar. Kalau udah merasa cukup paham sama dasar-dasarnya, baru deh kamu siap
-                buat MBKM.
-            </div>
-            <div class="answer-box">
-                <div class="input-box">
-                    <img src="frontend/images/user profile.png" alt="user" class="img-user ml-1"
-                        style="width: 15%; height: 15%">
-                    <span class="user-name">Rosco</span>
-                </div>
-                Aku dulu ngambil di semester 7. Waktunya pas banget karena udah beres mata kuliah wajib, jadi lebih
-                fleksibel deh buat fokus ke program MBKM.
-            </div>
-            <div class="answer-box">
-                <div class="input-box">
-                    <img src="frontend/images/user profile.png" alt="user" class="img-user ml-1"
-                        style="width: 15%; height: 15%">
-                    <span class="user-name">Rosco</span>
-                </div>
-                Aku lihat banyak yang ambil di semester 6. Kayaknya itu waktu yang pas karena gak terlalu buru-buru tapi
-                juga gak terlalu akhir, jadi masih ada waktu buat persiapan lain juga.
-            </div>
-            <div class="answer-box">
-                <div class="input-box">
-                    <img src="frontend/images/user profile.png" alt="user" class="img-user ml-1"
-                        style="width: 15%; height: 15%">
-                    <span class="user-name">Rosco</span>
-                </div>
-                Menurutku sih, idealnya di semester 5 atau 6. Di semester itu, kamu udah punya dasar yang cukup kuat dan
-                bisa fokus banget buat eksplor MBKM tanpa ganggu kuliah utama.
-            </div>
+            @else
+                <p class="no-answer">No answers yet.</p>
+            @endif
         </div>
     </header>
+
+
+    <footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <div class="footer-left ml-1">
+                <p class="footer-heading">THANK YOU FOR VISITING OUR WEBSITE</p>
+                <nav class="footer-nav">
+                    <a href="{{ url('/') }}">Home</a> | 
+                    <a href="{{ route('program.kesenian') }}">Program</a> | 
+                    <a href="{{ url('/moreEvents') }}">Events</a> | 
+                    <a href="{{ url('/qna') }}">QnA</a> | 
+                    <a href="#">Karier</a>
+                </nav>
+                <p class="follow-us">FOLLOW US</p>
+                <div class="footer-social">
+                    <a href="#" target="_blank"><i class="fab fa-facebook"></i> Facebook</a> |
+                    <a href="https://www.instagram.com/himsi.itdel_/" target="_blank"><i class="fab fa-instagram"></i> Instagram</a> |
+                    <a href="https://www.linkedin.com/company/himpunan-mahasiswa-sistem-informasi-itdel/posts/?feedView=all" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                </div>
+            </div>
+            <div class="footer-right">
+                <p class="footer-contact-heading">CONTACT US</p>
+                <p><i class="fas fa-map-marker-alt"></i> Jl. Sitoluama, Laguboti, Toba</p>
+                <p><i class="fas fa-envelope"></i> himsi@gmail.com</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <div class="footer-logo-wrapper">
+                <img src="{{ asset('frontend/images/lambang bagus.png') }}" alt="SI Logo" class="footer-logo" />
+            </div>
+            <div class="footer-title">
+                <p class="title">INFORMATION SYSTEMS</p>
+                <p class="subtitle">Del Institute of Technology</p>
+            </div>
+        </div>
+        <div class="footer-copyright">
+            <hr class="footer-line" />
+            <p>Copyright &copy; 2024 HIMSI. All right reserved.</p>
+        </div>
+    </div>
+</footer>
 
     <!-- CDN -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>

@@ -14,6 +14,9 @@ return new class extends Migration
         Schema::create('qna', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('question');
+
+            $table->text('answer')->nullable()->change();
+
             $table->unsignedBigInteger('posted_by');
             $table->unsignedBigInteger('answered_by')->nullable();
 
@@ -37,5 +40,6 @@ return new class extends Migration
     public function down(): void
     {
         Schema::dropIfExists('qna');
+        $table->text('answer')->nullable()->change();
     }
 };

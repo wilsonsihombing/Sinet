@@ -38,4 +38,10 @@ class QnA extends Model
         ]);
     }
 
+
+    public function postedBy()
+    {
+        return $this->belongsTo(User::class, 'posted_by'); // 'posted_by_id' adalah nama kolom di tabel `qnas`
+    }
+
 }
