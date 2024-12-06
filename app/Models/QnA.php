@@ -10,13 +10,11 @@ class QnA extends Model
 {
     use HasFactory, SoftDeletes;
 
-    protected $table = 'qna'; // Nama tabel
+    protected $table = 'qna';
 
     protected $fillable = [
         'question',
-        'answer',
         'posted_by',
-        'answered_by',
     ];
 
     public function user()
@@ -27,14 +25,23 @@ class QnA extends Model
             ]);
     }
 
+    public function answers()
+    {
+        return $this->hasMany(Answer::class, 'qna_id');
+    }
+
     public function answeredBy()
-{
+    {
     return $this->belongsTo(User::class, 'answered_by')
         ->withDefault([
             'name' => 'Pengguna yang menjawab tidak ditemukan',
         ]);
-}
+    }
 
 
+    public function postedBy()
+    {
+        return $this->belongsTo(User::class, 'posted_by'); // 'posted_by_id' adalah nama kolom di tabel `qnas`
+    }
 
 }

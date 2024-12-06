@@ -61,13 +61,13 @@
                                 id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 MyHimsi
                                 {{-- <img src="frontend/images/user profile.png" alt="user" class="img-user ml-1" /> --}}
-                                <img src="{{ Auth::user()->photo ? asset('storage/' . Auth::user()->photo) : url('frontend/images/default-avatar.png') }}" alt="user" class="img-user ml-1">
+                                <img src="{{ Auth::user()->photo ? asset('storage/' . Auth::user()->photo) : url('frontend/images/profile.png') }}" alt="user" class="img-user ml-1">
                                 {{-- <i class="bi bi-person-circle mr-2"></i> --}}
                             </button>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
                                 <a class="dropdown-item d-flex align-items-center" href="/profile">
                                     {{-- <i class="bi bi-person-circle mr-2"></i> <!-- Ikon Profile --> --}}
-                                    <img src="{{ Auth::user()->photo ? asset('storage/' . Auth::user()->photo) : url('frontend/images/default-avatar.png') }}" alt="user" class="img-avatar ml-3">
+                                    <img src="{{ Auth::user()->photo ? asset('storage/' . Auth::user()->photo) : url('frontend/images/profile.png') }}" alt="user" class="img-avatar ml-3">
                                     Profile
                                 </a>
                                 <button type="submit" class="dropdown-item d-flex align-items-center">
@@ -86,13 +86,13 @@
                                 id="dropdownMenuDesktop" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 MyHimsi
                                 {{-- <img src="frontend/images/user profile.png" alt="user" class="img-user ml-1" /> --}}
-                                <img src="{{ Auth::user()->photo ? asset('storage/' . Auth::user()->photo) : url('frontend/images/default-avatar.png') }}" alt="user" class="img-user ml-1">
+                                <img src="{{ Auth::user()->photo ? asset('storage/' . Auth::user()->photo) : url('frontend/images/profile.png') }}" alt="user" class="img-user ml-1">
                                 {{-- <i class="bi bi-person-circle ml-1"></i> --}}
                             </button>
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuDesktop">
                                 <a class="dropdown-item d-flex align-items-center" href="/profile">
                                     {{-- <i class="bi bi-person-circle mr-2" style="font-size: 20px;"></i> <!-- Ikon Profile --> --}}
-                                    <img src="{{ Auth::user()->photo ? asset('storage/' . Auth::user()->photo) : url('frontend/images/default-avatar.png') }}" alt="user" class="img-avatar ml-3">
+                                    <img src="{{ Auth::user()->photo ? asset('storage/' . Auth::user()->photo) : url('frontend/images/profile.png') }}" alt="user" class="img-avatar ml-3">
                                     Profile
                                 </a>
                                 <button type="submit" class="dropdown-item d-flex align-items-center">

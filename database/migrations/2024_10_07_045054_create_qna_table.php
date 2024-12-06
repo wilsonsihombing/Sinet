@@ -14,9 +14,17 @@ return new class extends Migration
         Schema::create('qna', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->string('question');
-            $table->text('answer')->nullable();
+
+            $table->text('answer')->nullable()->change();
+
             $table->unsignedBigInteger('posted_by');
-            $table->unsignedBigInteger('answered_by')->nullable(); 
+            $table->unsignedBigInteger('answered_by')->nullable();
+
+            // Tambahkan kolom answer1 hingga answer20
+            for ($i = 1; $i <= 20; $i++) {
+                $table->string("answer$i")->nullable();
+            }
+
             $table->softDeletes();
             $table->timestamps();
 
@@ -32,5 +40,6 @@ return new class extends Migration
     public function down(): void
     {
         Schema::dropIfExists('qna');
+        $table->text('answer')->nullable()->change();
     }
 };
