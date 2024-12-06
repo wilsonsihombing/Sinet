@@ -29,7 +29,7 @@ class qnaController extends Controller
         // Simpan data ke database
         QnA::create([
             'question' => $request->input('question'),
-            'posted_by' => auth()->user()->id, // Menggunakan ID pengguna yang login
+            'posted_by' => auth()->id, // Menggunakan ID pengguna yang login
         ]);
 
         return redirect()->back()->with('success', 'Pertanyaan berhasil dikirim.');
