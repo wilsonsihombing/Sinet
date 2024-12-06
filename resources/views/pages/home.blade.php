@@ -106,8 +106,8 @@
                 </div>
 
                 <div class="row justify-content-center mt-3 mb-3 struktur-img">
-                    <div class="col-lg-10 col-md-8 col-sm-12">
-                        <img src="frontend/images/struktur organisasi.png" alt="struktur organisasi" class="img-fluid">
+                    <div class="col-lg-10 col-md-8 col-sm-12 ">
+                        <img src="frontend/images/strukturorg2.png" alt="struktur organisasi" class="img-fluid">
                     </div>
                 </div>
             </section>

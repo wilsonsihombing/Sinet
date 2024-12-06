@@ -11,7 +11,7 @@
             <!-- content -->
             <div class="row align-items-center">
                 <div class="col-md-4 text-center mb-3 mb-md-0">
-                    <img src="{{ $user->photo ? asset('storage/' . $user->photo) : url('frontend/images/kezia.png') }}" alt="Profil {{ $user->name }}" class="profile-image" />
+                    <img src="{{ $user->photo ? asset('storage/' . $user->photo) : url('frontend/images/profile.png') }}" alt="Profil {{ $user->name }}" class="profile-image" />
                 </div>
 
                 <div class="col-md-8">

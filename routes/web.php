@@ -32,36 +32,38 @@ Route::get('/humas', [programController::class, 'humas'])->name('program.humas')
 Route::get('/kesenian', [programController::class, 'kesenian'])->name('program.kesenian');
 Route::get('/pendidikan', [programController::class, 'pendidikan'])->name('program.pendidikan');
 
+// Route::get('/qna', [qnaController::class, 'showQuestions'])->name('qna')->middleware(['auth', 'verified']); // Menampilkan pertanyaan
+// Route::post('/qna', [qnaController::class, 'store'])->name('qna.store')->middleware('auth'); // Menyimpan pertanyaan baru
+// Route::get('/answerqna', [qnaController::class, 'answer'])->name('answer.qna')->middleware('auth'); // Halaman menjawab pertanyaan
+// Route::get('/answerqna/{id}', [qnaController::class, 'answerPage'])->middleware('auth'); // Halaman detail jawaban
+// Route::post('/submit-answer-qna/{id}', [qnaController::class, 'submitAnswer'])->name('submit.answer.qna')->middleware('auth'); // Submit jawaban
+// Route::get('/seeanswer', [qnaController::class, 'seeAnswer'])->name('seeAnswer.qna')->middleware('auth'); // Melihat jawaban
+// Route::post('/qna/{id}/answer', [QnAController::class, 'submitAnswer'])->name('submit.answer.qna');
+// Route::get('/answerqna', [qnaController::class, 'answer'])->name('answer.qna');
+// Route::get('/seeanswer', [qnaController::class, 'seeAnswer'])->name('seeAnswer.qna');
+// Route::get('/seeAnswer/{id}', [qnaController::class, 'seeAnswer'])->name('seeAnswer.qna')->middleware('auth'); // Melihat jawaban
+
 Route::get('/qna', [qnaController::class, 'showQuestions'])->name('qna')->middleware(['auth', 'verified']); // Menampilkan pertanyaan
 Route::post('/qna', [qnaController::class, 'store'])->name('qna.store')->middleware('auth'); // Menyimpan pertanyaan baru
-Route::get('/answerqna', [qnaController::class, 'answer'])->name('answer.qna')->middleware('auth'); // Halaman menjawab pertanyaan
 Route::get('/answerqna/{id}', [qnaController::class, 'answerPage'])->middleware('auth'); // Halaman detail jawaban
 Route::post('/submit-answer-qna/{id}', [qnaController::class, 'submitAnswer'])->name('submit.answer.qna')->middleware('auth'); // Submit jawaban
-Route::get('/seeanswer', [qnaController::class, 'seeAnswer'])->name('seeAnswer.qna')->middleware('auth'); // Melihat jawaban
 Route::post('/qna/{id}/answer', [QnAController::class, 'submitAnswer'])->name('submit.answer.qna');
-Route::get('/answerqna', [qnaController::class, 'answer'])->name('answer.qna');
-Route::get('/seeanswer', [qnaController::class, 'seeAnswer'])->name('seeAnswer.qna');
-Route::get('/seeAnswer/{id}', [qnaController::class, 'seeAnswer'])->name('seeAnswer.qna')->middleware('auth'); // Melihat jawaban
+Route::get('/seeAnswer/{id}', [qnaController::class, 'seeAnswer'])->name('seeAnswer.qna')->middleware('auth'); // Melihat jawaban`
 
 
-
+// Menampilkan halaman daftar info karir
 Route::get('/infokarier', [CareerInfoController::class, 'index'])->name('career.index');
 Route::get('/infokarier/create', [CareerInfoController::class, 'create'])->name('career.create');
 Route::post('/infokarier/store', [CareerInfoController::class, 'store'])->name('career.store');
 Route::get('/infokarier/{id}', [CareerInfoController::class, 'show'])->name('career.show');
 Route::get('/infokarier/search', [CareerInfoController::class, 'search'])->name('career.search');
 
-
-     
-
-
-
-Route::get('/infokarier', [infoKarierController::class, 'index'])
-    ->name('info.karier')
-    ->middleware('auth', 'verified');
+// Route::get('/infokarier', [infoKarierController::class, 'index'])
+//     ->name('info.karier')
+//     ->middleware('auth', 'verified');
 
 // Rute untuk menyimpan info karir
-Route::post('/career/store', [infoKarierController::class, 'store'])->name('career.store');
+// Route::post('/career/store', [infoKarierController::class, 'store'])->name('career.store');
 
 
 
